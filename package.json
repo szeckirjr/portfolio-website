@@ -3,17 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.6",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^10.4.9",
     "@testing-library/user-event": "^12.8.3",
+    "@types/react": "^17.0.18",
     "framer-motion": "^4.1.17",
+    "randomcolor": "^0.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^3.11.0",
+    "react-particles-js": "^3.5.3",
+    "react-random-reveal": "^1.0.1",
     "react-scripts": "4.0.3",
+    "tsparticles": "^1.33.3",
+    "typescript": "^4.3.5",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -36,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/randomcolor": "^0.5.6",
+    "react-random-word": "^0.0.2"
   }
 }
