@@ -2,9 +2,9 @@ import { Heading, HStack, Text } from "@chakra-ui/react";
 
 export default function About() {
     return (
-        <HStack h="50vh" justify="space-evenly">
-            <Heading>About</Heading>
-            <Text w="50vw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam eum reiciendis blanditiis magnam eius, aliquam quam fugiat quo ipsum repudiandae quae quidem. Fuga ullam mollitia molestiae ducimus nesciunt quidem inventore.</Text>
+        <HStack h="40vh" justify="space-evenly">
+            <Heading id="About">About</Heading>
+            <Text w="50vw">Originally from Porto Alegre, Brazil, I am now based in Victoria, B.C., where I go to the University of Victoria. I am currently entering my 4th year in Software Engineering. I have completed two co-op terms so far (4-month paid internships) and have gained experience with web development and data analysis, using tools such as HTML, CSS, JavaScript, Python, SQL, etc.</Text>
         </HStack>
     );
 }

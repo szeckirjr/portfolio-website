@@ -2,9 +2,9 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Center, Heading, IconButton, Image, VStack } from "@chakra-ui/react";
 import randomColor from "randomcolor";
 import { useState } from "react";
-import Particles from "react-particles-js";
 import { RandomReveal } from "react-random-reveal";
 import { CharactersRequired } from "react-random-reveal/lib/types";
+import Menubar from "./Menubar";
 
 function getRandomInt(min: number, max: number): number {
     min = Math.ceil(min);
@@ -13,11 +13,11 @@ function getRandomInt(min: number, max: number): number {
 }
 
 export default function Home(): JSX.Element {
-    const [ imgSrc, setImgSrc ] = useState(['memojis/memoji', String(getRandomInt(1,6)), '.png'].join(''));
+    const [ imgSrc, setImgSrc ] = useState([process.env.PUBLIC_URL,'/memojis/memoji', String(getRandomInt(1,6)), '.png'].join(''));
     const [ colors, setColors ] = useState(randomColor({ count: 2 }));
 
     const handleClick = () => {
-        setImgSrc(['memojis/memoji', String(getRandomInt(1,6)), '.png'].join(''));
+        setImgSrc([process.env.PUBLIC_URL,'/memojis/memoji', String(getRandomInt(1,6)), '.png'].join(''));
         setColors(randomColor({ count: 2 }))
     }
 
@@ -25,9 +25,9 @@ export default function Home(): JSX.Element {
 
     return (
         <>
+            <Menubar />
             <Center h="100vh" bg="#303030" p="20px">
                 <VStack spacing={8}>
-                    <Image src="memojis/memoji1.png" />
                     <Image
                         cursor="pointer"
                         borderRadius="full"
@@ -36,7 +36,7 @@ export default function Home(): JSX.Element {
                         onClick={handleClick}
                         src={imgSrc}
                     />
-                    <Heading color="gray.200" size="4xl">
+                    <Heading id="Home" color="gray.200" size="3xl">
 						Hello, I am Eduardo
                     </Heading>
                     <Heading color={colors[1]}>
@@ -58,7 +58,6 @@ export default function Home(): JSX.Element {
 					/>
                 </VStack>
             </Center>
-            <Particles height="10vh" />
         </>
     );
 }
