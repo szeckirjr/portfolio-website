@@ -9,6 +9,7 @@ import About from './components/About.tsx';
 function App() {
   return (
     <ChakraProvider theme={theme}>
+      <div id="top" />
       <Home />
       <About />
     </ChakraProvider>

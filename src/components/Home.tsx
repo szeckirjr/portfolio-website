@@ -1,5 +1,4 @@
-import { ChevronDownIcon } from "@chakra-ui/icons";
-import { Center, Heading, IconButton, Image, VStack } from "@chakra-ui/react";
+import { Center, Heading, Image, VStack } from "@chakra-ui/react";
 import randomColor from "randomcolor";
 import { useState } from "react";
 import { RandomReveal } from "react-random-reveal";
@@ -26,7 +25,7 @@ export default function Home(): JSX.Element {
     return (
         <>
             <Menubar />
-            <Center h="100vh" bg="#303030" p="20px">
+            <Center bg="#303030" p="20px" h="100vh" w="100vw">
                 <VStack spacing={8}>
                     <Image
                         cursor="pointer"
@@ -36,7 +35,7 @@ export default function Home(): JSX.Element {
                         onClick={handleClick}
                         src={imgSrc}
                     />
-                    <Heading id="Home" color="gray.200" size="3xl">
+                    <Heading id="home" color="gray.200" size="3xl">
 						Hello, I am Eduardo
                     </Heading>
                     <Heading color={colors[1]}>
@@ -50,12 +49,6 @@ export default function Home(): JSX.Element {
 							characterSet={charSet as CharactersRequired}
 						/>
                     </Heading>
-					<IconButton
-						isRound
-						aria-label="Continue to next page"
-						icon={<ChevronDownIcon />}
-						size="lg"
-					/>
                 </VStack>
             </Center>
         </>
