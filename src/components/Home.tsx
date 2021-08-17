@@ -27,11 +27,19 @@ export default function Home(): JSX.Element {
         <>
             <Center h="100vh" bg="#303030" p="20px">
                 <VStack spacing={8}>
-                    <Image cursor="pointer" borderRadius="full" bgGradient={['linear(to-b,',colors[0],',',colors[1],')'].join('')} boxSize="230px" src={imgSrc} onClick={handleClick} />
+                    <Image src="memojis/memoji1.png" />
+                    <Image
+                        cursor="pointer"
+                        borderRadius="full"
+                        bgGradient={['linear(to-b,',colors[0],',',colors[1],')'].join('')}
+                        boxSize="230px"
+                        onClick={handleClick}
+                        src={imgSrc}
+                    />
                     <Heading color="gray.200" size="4xl">
 						Hello, I am Eduardo
                     </Heading>
-                    <Heading color={colors[0]}>
+                    <Heading color={colors[1]}>
 						<RandomReveal
 							characters="Software Engineering student @ UVic"
 							isPlaying
