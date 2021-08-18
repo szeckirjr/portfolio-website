@@ -1,29 +1,28 @@
 import { Button, Flex } from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
 
 export default function Menubar(): JSX.Element {
 
-    const titleAndIDs = {
-        "Home": "top",
-        "About": "about",
-        "Experience": "experience",
-        "Project": "project",
-        "Contact": "contact"
-    };
-
-    type title = "Home" | "About" | "Experience" | "Project" | "Contact";
+    type title = "Home" | "About" | "Experience" | "Projects" | "Contact";
+    const pages = ["Home", "About", "Experience", "Projects", "Contact"];
 
     function createButton(title: title) {
-        return <a href={"#"+titleAndIDs[title]}>
-                <Button colorScheme="gray.50" size="lg" variant="ghost">
+        return  <Link to={"/"+title.toLowerCase()}>
+                <Button
+                    colorScheme="whiteAlpha"
+                    color="white"
+                    size="lg"
+                    variant="ghost"
+                >
                     {title}
                 </Button>
-            </a>;
+            </Link>;
     }
 
-    const listOfButtons: JSX.Element[] = Object.keys(titleAndIDs).map((title) => createButton(title as title));
+    const listOfButtons: JSX.Element[] = pages.map((title) => createButton(title as title));
 
     return (
-        <Flex shadow="xl" p={3} position="fixed" w="100vw" bg="#303030" justify="center">
+        <Flex shadow="xl" p={3} position="fixed" zIndex="2" w="100vw" bg="#303030" justify="center">
             {listOfButtons}
         </Flex>
     )

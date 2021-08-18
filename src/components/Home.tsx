@@ -1,9 +1,8 @@
-import { Center, Heading, Image, VStack } from "@chakra-ui/react";
+import { Center, Heading, HStack, Image, VStack } from "@chakra-ui/react";
 import randomColor from "randomcolor";
 import { useState } from "react";
 import { RandomReveal } from "react-random-reveal";
 import { CharactersRequired } from "react-random-reveal/lib/types";
-import Menubar from "./Menubar";
 
 function getRandomInt(min: number, max: number): number {
     min = Math.ceil(min);
@@ -24,8 +23,8 @@ export default function Home(): JSX.Element {
 
     return (
         <>
-            <Menubar />
-            <Center bg="#303030" p="20px" h="100vh" w="100vw">
+        <Center id="home" bg="#303030" p="20px" h="100vh" minW="100vw" style={{scrollSnapAlign: "start"}}>
+            <HStack>
                 <VStack spacing={8}>
                     <Image
                         cursor="pointer"
@@ -36,21 +35,30 @@ export default function Home(): JSX.Element {
                         src={imgSrc}
                     />
                     <Heading id="home" color="gray.200" size="3xl">
-						Hello, I am Eduardo
+                        <RandomReveal
+                            characters="Hello, I'm Eduardo"
+                            isPlaying
+                            duration={1.5}
+                            speed={6}
+                            revealDuration={0.9}
+                            revealEasing="easeOutQuad"
+                            characterSet={charSet as CharactersRequired}
+                        />
                     </Heading>
                     <Heading color={colors[1]}>
-						<RandomReveal
-							characters="Software Engineering student @ UVic"
-							isPlaying
-							duration={2}
-							speed={2}
-							revealDuration={0.9}
-							revealEasing="easeOutQuad"
-							characterSet={charSet as CharactersRequired}
-						/>
+                        <RandomReveal
+                            characters="Software Engineering student @ UVic"
+                            isPlaying
+                            duration={2.5}
+                            speed={6}
+                            revealDuration={0.9}
+                            revealEasing="easeOutQuad"
+                            characterSet={charSet as CharactersRequired}
+                        />
                     </Heading>
                 </VStack>
-            </Center>
+            </HStack>
+        </Center>
         </>
     );
 }
