@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Project } from "../../docs/ProjectData";
+import CheckGitHubRepoButton from "./CheckGitHubRepoButton";
 
 type Props = {
     isOpen: boolean;
@@ -34,6 +35,7 @@ export default function ProjectModal({isOpen, onClose, project}: Props) {
                 <ModalCloseButton color="gray.900" />
                 <ModalBody pb={6}>
                     <Text as="p" color="gray.900">{description}</Text>
+                    <CheckGitHubRepoButton repo_url={project.github_url} />
                 </ModalBody>
             </ModalContent>
         </Modal>
