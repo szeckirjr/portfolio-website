@@ -26,16 +26,19 @@ export default function Contact() {
                             aria_label="Open my Linkedin"
                             bg={colors[0]}
                             icon={<FaLinkedinIn />}
+                            href="https://www.linkedin.com/in/eduardo-szeckir/"
                         />
                         <SocialMediaButton
                             aria_label="Open my GitHub"
                             bg={colors[0]}
                             icon={<ImGithub />}
+                            href="https://github.com/szeckirjr"
                         />
                         <SocialMediaButton
                             aria_label="Send me an email"
                             bg={colors[0]}
                             icon={<MdEmail />}
+                            href="mailto:eszeckirjr@gmail.com"
                         />
                     </HStack>
                     <Image
@@ -51,11 +54,13 @@ export default function Contact() {
                             aria_label="Open my Goodreads"
                             bg={colors[1]}
                             icon={<SiGoodreads />}
+                            href="https://www.goodreads.com/user/show/95379777-eduardo-szeckir"
                         />
                         <SocialMediaButton
                             aria_label="Open my Spotify"
                             bg={colors[1]}
                             icon={<FaSpotify />}
+                            href="https://open.spotify.com/user/szeckirjr?si=d7a10eebae724c10"
                         />
                     </HStack>
                 </VStack>

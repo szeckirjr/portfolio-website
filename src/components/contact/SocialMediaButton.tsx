@@ -5,10 +5,14 @@ type Props = {
     aria_label: string;
     bg: string;
     icon: JSX.Element;
+    href: string;
 }
 
-export default function SocialMediaButton({ aria_label, bg, icon }: Props){
+export default function SocialMediaButton({ aria_label, bg, icon, href }: Props){
     return <IconButton
+                as="a"
+                target="_blank"
+                href={href}
                 aria-label="Open my Linkedin"
                 bg={bg}
                 icon={icon}
