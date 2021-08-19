@@ -1,4 +1,4 @@
-import { Box, Heading, VStack } from "@chakra-ui/react";
+import { Box, Heading, VStack, Text } from "@chakra-ui/react";
 import { VerticalTimeline }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { coopExperienceData, otherExperienceData } from "../docs/ExperienceData";
@@ -10,6 +10,7 @@ export default function Experience() {
     const timelineOtherExperience = otherExperienceData.map(p => <WorkTimelineElement {...p} />);
 
     return <VStack pt={40} pb={20} spacing={38} bg="#303030">
+                <Text color="white" fontSize="1.25em">Click on any element to learn more about my role</Text>
                 <Heading color="gray.50" id="coop-experience">Co-Op Experience</Heading>
                 <Box w="100vw">
                     <VerticalTimeline>
