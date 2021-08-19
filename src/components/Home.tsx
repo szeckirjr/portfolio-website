@@ -38,7 +38,7 @@ export default function Home(): JSX.Element {
                         <RandomReveal
                             characters="Hello, I'm Eduardo"
                             isPlaying
-                            duration={1.5}
+                            duration={1.3}
                             speed={6}
                             revealDuration={0.9}
                             revealEasing="easeOutQuad"
@@ -49,7 +49,7 @@ export default function Home(): JSX.Element {
                         <RandomReveal
                             characters="Software Engineering student @ UVic"
                             isPlaying
-                            duration={2.5}
+                            duration={2.3}
                             speed={6}
                             revealDuration={0.9}
                             revealEasing="easeOutQuad"
