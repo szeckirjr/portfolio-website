@@ -9,7 +9,7 @@ export default function Experience() {
     const timelineCoopExperience = coopExperienceData.map((p) => <WorkTimelineElement {...p} /> );
     const timelineOtherExperience = otherExperienceData.map(p => <WorkTimelineElement {...p} />);
 
-    return <VStack pt={40} pb={20} spacing={38} bg="#303030">
+    return <VStack pl={10} pr={10} pt={40} pb={20} spacing={38} bg="#303030">
                 <Text color="white" fontSize="1.25em">Click on any element to learn more about my role</Text>
                 <Heading color="gray.50" id="coop-experience">Co-Op Experience</Heading>
                 <Box w="100vw">
