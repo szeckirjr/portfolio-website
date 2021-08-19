@@ -8,6 +8,7 @@ import About from './components/About.tsx';
 import Menubar from './components/Menubar';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
+import Projects from './components/Projects';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/projects">
+            <Projects />
           </Route>
           <Route path="/">
             <Home />
