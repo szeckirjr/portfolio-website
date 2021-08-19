@@ -3,12 +3,7 @@ import randomColor from "randomcolor";
 import { useState } from "react";
 import { RandomReveal } from "react-random-reveal";
 import { CharactersRequired } from "react-random-reveal/lib/types";
-
-function getRandomInt(min: number, max: number): number {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+import { getRandomInt } from "../docs/FuncLib";
 
 export default function Home(): JSX.Element {
     const [ imgSrc, setImgSrc ] = useState([process.env.PUBLIC_URL,'/memojis/memoji', String(getRandomInt(1,6)), '.png'].join(''));
