@@ -1,11 +1,10 @@
 import { InfoOutlineIcon } from "@chakra-ui/icons";
 import { Box, Heading, HStack, IconButton, Text, useDisclosure } from "@chakra-ui/react";
-import { RiMentalHealthLine } from "react-icons/ri";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { Experience } from "../../docs/ExperienceData";
 import ExperienceModal from "./ExperienceModal";
 
-export default function WorkTimelineElement({ title, subtitle, description, color, range }: Experience){
+export default function WorkTimelineElement({ title, subtitle, description, color, range, icon }: Experience){
     const { isOpen, onOpen, onClose } = useDisclosure();
     return (
         <VerticalTimelineElement
@@ -14,7 +13,7 @@ export default function WorkTimelineElement({ title, subtitle, description, colo
             contentArrowStyle={{ borderRight: ('7px solid  '+color) }}
             date={range}
             iconStyle={{ background: color, color: '#fff' }}
-            icon={<RiMentalHealthLine />}
+            icon={icon}
             onTimelineElementClick={onOpen}
             style={ {cursor:"pointer"} }
         >
@@ -42,7 +41,7 @@ export default function WorkTimelineElement({ title, subtitle, description, colo
                     shadow="lg"
                 />
             </HStack>
-            <ExperienceModal isOpen={isOpen} onClose={onClose} experience={{ title, subtitle, description, color, range }} />
+            <ExperienceModal isOpen={isOpen} onClose={onClose} experience={{ title, subtitle, description, color, range, icon }} />
         </VerticalTimelineElement>
     );
 }

@@ -1,9 +1,13 @@
+import { RiGuideLine, RiMentalHealthLine, RiPaintBrushFill } from "react-icons/ri"
+import { GiOpenBook } from "react-icons/gi"
+
 export type Experience = {
     title: string;
     subtitle: string;
     range: string;
     description: string[];
     color: string;
+    icon: JSX.Element;
 }
 
 export const coopExperienceData: Experience[] = [
@@ -15,7 +19,8 @@ export const coopExperienceData: Experience[] = [
             "For my first co-op, I worked at Centre for Addiction and Mental Health (CAMH), the largest mental health hospital in Canada. I worked entirely remotely due to the COVID-19 pandemic. There, I worked on developing an interactive web based application from scratch to better support the creation of health care plans in a health-specific data standard.",
             "Worked with Python and Dash for the generation of interactive interfaces. The second version was made using HTML, CSS, and JavaScript. The application runs on a Node.js/Express.js server and it has a MongoDB database for care plan storage."
         ],
-        color: "#97266D"
+        color: "#97266D",
+        icon: <RiMentalHealthLine />
     }
 ]
 
@@ -28,7 +33,8 @@ export const otherExperienceData: Experience[] = [
             "Representing UVic as a Campus Tour Guide by showing the campus to prospective students and their families.",
             "Acquired skills such as public speaking and interpersonal relations.",
         ],
-        color: "#ffaf00"
+        color: "#ffaf00",
+        icon: <RiGuideLine />
     },
     {
         title: "Digitization Assistant",
@@ -38,7 +44,8 @@ export const otherExperienceData: Experience[] = [
             "Scanning old BC Gazettes with the intent of uploading them into the Internet Archive.",
             "Learned how to use new equipament/software very fast, while learning how to work on an office environment for hours a day."
         ],
-        color: "gray"
+        color: "gray",
+        icon: <GiOpenBook />
     },
     {
         title: "Student Painter",
@@ -47,6 +54,7 @@ export const otherExperienceData: Experience[] = [
         description: [
             "Working as a student painter over the summer. Worked with clients (i.e. answering questions and handling any concerns they might have had) and worked outdoors. Also learned to be extremely flexible, since our time/location was usually given 30min before the job started."
         ],
-        color: "#ff6600"
+        color: "#ff6600",
+        icon: <RiPaintBrushFill />
     }
 ]
