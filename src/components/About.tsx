@@ -50,7 +50,7 @@ export default function About() {
             />
             <Heading zIndex={2}  size="xl"> In 2018, I moved to Victoria, B.C., to go to the <Box as="span" color={randCol}>University of Victoria</Box></Heading>
             <Parallax x={[-30,30]}>
-                <Image maxH="400px" src={process.env.PUBLIC_URL+"/uvicself.JPG"} />
+                <Image maxH="400px" src={process.env.PUBLIC_URL+"/uvicself.jpg"} />
             </Parallax>
             
             <Heading zIndex={2}  size="xl">
