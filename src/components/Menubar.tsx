@@ -47,7 +47,7 @@ export default function Menubar(): JSX.Element {
     const listOfButtons: JSX.Element[] = pages.map((title) => createButton(title as title));
 
     return (
-        <Flex shadow="xl" p={3} position="fixed" zIndex="2" w="100vw" bg="#303030" justify="space-evenly">
+        <Flex shadow="xl" p={3} position="fixed" zIndex={4} w="100vw" bg="#303030" justify="space-evenly">
             {listOfButtons}
         </Flex>
     )
