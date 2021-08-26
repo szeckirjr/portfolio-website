@@ -1,5 +1,6 @@
 import { RiGuideLine, RiMentalHealthLine, RiPaintBrushFill } from "react-icons/ri"
 import { GiOpenBook } from "react-icons/gi"
+import { FaCanadianMapleLeaf } from "react-icons/fa"
 
 export type Experience = {
     title: string;
@@ -11,6 +12,17 @@ export type Experience = {
 }
 
 export const coopExperienceData: Experience[] = [
+    {
+        title: "Junior Data Analyst",
+        subtitle: "Public Health Agency of Canada (PHAC)",
+        range: "May 2021 - Present",
+        description : [
+            "For my second co-op, I am working for the Public Health Agency of Canada (PHAC). I am working completely remotely due to the on-going pandemic. There, I worked with data engineering and data analysis of COVID-19 related data.",
+            "Worked with data models and diagramming, SQL, web development, pipelines, data cleaning, and Docker."
+        ],
+        color: "#b53d35",
+        icon: <FaCanadianMapleLeaf />
+    },
     {
         title: "Software Engineering Intern",
         subtitle: "Centre for Addiction and Mental Health (CAMH)",
