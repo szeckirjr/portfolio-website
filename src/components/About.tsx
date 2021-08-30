@@ -87,8 +87,14 @@ export default function About() {
           <Box as="span" color={randCol}>
             two co-op terms
           </Box>{' '}
-          so far and have gained experience with web development and data
-          analysis.
+          so far and have gained experience with{' '}
+          <Box as="span" color={randCol}>
+            web development
+          </Box>{' '}
+          and
+          <Box as="span" color={randCol}>
+            data analysis
+          </Box>{' '}
           <br />
           <br />
           If you want to hear more about it, check out my{' '}
