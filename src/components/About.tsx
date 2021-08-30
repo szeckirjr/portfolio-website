@@ -91,7 +91,7 @@ export default function About() {
           <Box as="span" color={randCol}>
             web development
           </Box>{' '}
-          and
+          and{' '}
           <Box as="span" color={randCol}>
             data analysis
           </Box>{' '}
