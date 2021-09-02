@@ -54,7 +54,7 @@ export const otherExperienceData: Experience[] = [
   },
   {
     title: 'Digitization Assistant',
-    subtitle: 'Univeristy of Victoria - Libraries',
+    subtitle: 'University of Victoria - Libraries',
     range: 'Sep. 2019 - Apr. 2020',
     description: [
       'Scanning old BC Gazettes with the intent of uploading them into the Internet Archive.',
