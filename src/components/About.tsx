@@ -55,7 +55,7 @@ export default function About() {
           <Box as="span" color={randCol}>
             Porto Alegre
           </Box>
-          , a city in the southernmost state in Brazil.
+          , a city in the southernmost state in Brazil
         </Heading>
         <Image
           maxH="400px"
