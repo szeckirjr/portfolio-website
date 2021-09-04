@@ -24,9 +24,17 @@ export default function Menubar(): JSX.Element {
 
   const [currPage, setCurrPage] = useState('Home');
 
+  const handleNavClick = (title: title) => {
+    setCurrPage(title);
+    window.scrollTo(0, 0);
+  };
+
   function createButton(title: title) {
     return (
-      <Link onClick={() => setCurrPage(title)} to={'/' + title.toLowerCase()}>
+      <Link
+        onClick={() => handleNavClick(title)}
+        to={'/' + title.toLowerCase()}
+      >
         {isLargeScreen ? (
           <Button
             colorScheme="whiteAlpha"
