@@ -7,6 +7,7 @@ import {
   BsFolderFill,
 } from 'react-icons/bs';
 import { AiFillPhone } from 'react-icons/ai';
+import { useState } from 'react';
 
 export default function Menubar(): JSX.Element {
   type title = 'Home' | 'About' | 'Experience' | 'Projects' | 'Contact';
@@ -21,13 +22,16 @@ export default function Menubar(): JSX.Element {
 
   const [isLargeScreen] = useMediaQuery('(min-width: 720px)');
 
+  const [currPage, setCurrPage] = useState('Home');
+
   function createButton(title: title) {
     return (
-      <Link to={'/' + title.toLowerCase()}>
+      <Link onClick={() => setCurrPage(title)} to={'/' + title.toLowerCase()}>
         {isLargeScreen ? (
           <Button
             colorScheme="whiteAlpha"
             color="white"
+            bgColor={currPage === title ? '#282828' : undefined}
             size="lg"
             variant="ghost"
             leftIcon={pageIcons[title]}
