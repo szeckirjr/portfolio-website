@@ -1,5 +1,5 @@
 import { Button, Flex, IconButton, useMediaQuery } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { HiHome } from 'react-icons/hi';
 import {
   BsFillPersonFill,
@@ -7,10 +7,15 @@ import {
   BsFolderFill,
 } from 'react-icons/bs';
 import { AiFillPhone } from 'react-icons/ai';
-import { useState } from 'react';
 
-export default function Menubar(): JSX.Element {
-  type title = 'Home' | 'About' | 'Experience' | 'Projects' | 'Contact';
+export default function Menubar({
+  currPage,
+  setCurrPage,
+}: {
+  currPage: string;
+  setCurrPage: (val: string) => void;
+}): JSX.Element {
+  type PageTitle = 'Home' | 'About' | 'Experience' | 'Projects' | 'Contact';
   const pages = ['Home', 'About', 'Experience', 'Projects', 'Contact'];
   const pageIcons = {
     Home: <HiHome />,
@@ -21,25 +26,28 @@ export default function Menubar(): JSX.Element {
   };
 
   const [isLargeScreen] = useMediaQuery('(min-width: 720px)');
+  const location = useLocation();
 
-  const [currPage, setCurrPage] = useState('Home');
-
-  const handleNavClick = (title: title) => {
-    setCurrPage(title);
-    window.scrollTo(0, 0);
-  };
-
-  function createButton(title: title) {
+  function createButton(title: PageTitle) {
+    console.log(
+      location.pathname,
+      title,
+      location.pathname === '/' + title.toLowerCase()
+    );
     return (
       <Link
-        onClick={() => handleNavClick(title)}
+        onClick={() => window.scrollTo(0, 0)}
         to={'/' + title.toLowerCase()}
       >
         {isLargeScreen ? (
           <Button
             colorScheme="whiteAlpha"
             color="white"
-            bgColor={currPage === title ? '#282828' : undefined}
+            bgColor={
+              location.pathname === '/' + title.toLowerCase()
+                ? '#282828'
+                : undefined
+            }
             size="lg"
             variant="ghost"
             leftIcon={pageIcons[title]}
@@ -51,6 +59,11 @@ export default function Menubar(): JSX.Element {
             aria-label={title}
             colorScheme="whiteAlpha"
             color="white"
+            bgColor={
+              location.pathname === '/' + title.toLowerCase()
+                ? '#282828'
+                : undefined
+            }
             size="lg"
             variant="ghost"
             icon={pageIcons[title]}
@@ -61,7 +74,7 @@ export default function Menubar(): JSX.Element {
   }
 
   const listOfButtons: JSX.Element[] = pages.map(title =>
-    createButton(title as title)
+    createButton(title as PageTitle)
   );
 
   return (
@@ -70,7 +83,7 @@ export default function Menubar(): JSX.Element {
       p={3}
       position="fixed"
       zIndex={4}
-      w="100vw"
+      w="100%"
       bg="#303030"
       justify="space-evenly"
     >

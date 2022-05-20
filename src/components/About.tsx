@@ -98,7 +98,7 @@ export default function About() {
           <br />
           <br />
           If you want to hear more about it, check out my{' '}
-          <Link to="/experience">
+          <Link onClick={() => window.scrollTo(0, 0)} to="/experience">
             <Box
               as="span"
               _hover={{ opacity: 0.5, transition: 'opacity 0.2s' }}
