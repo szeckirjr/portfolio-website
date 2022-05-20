@@ -14,7 +14,7 @@ export function ProjectCard({ ...project }: Project) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const colors = randomColor({
-    alpha: 0.5,
+    alpha: 0.8,
     format: 'rgba',
     luminosity: 'dark',
     count: project.tags.length,
@@ -32,12 +32,15 @@ export function ProjectCard({ ...project }: Project) {
         textAlign="center"
         p={10}
         m={15}
-        maxW="400px"
+        flexGrow={1}
+        w="300px"
         borderRadius="lg"
         bg="gray.600"
         color="white"
         onClick={onOpen}
         cursor="pointer"
+        onMouseEnter={e => ((e.target as HTMLDivElement).style.scale = '1.05')}
+        onMouseLeave={e => ((e.target as HTMLDivElement).style.scale = '1')}
       >
         <Heading size="lg">{project.title}</Heading>
         <Text>{project.short_description}</Text>
