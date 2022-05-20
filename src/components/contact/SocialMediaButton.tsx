@@ -21,8 +21,11 @@ export default function SocialMediaButton({
       href={href}
       aria-label="Open my Linkedin"
       bg={bg}
+      onMouseEnter={e => ((e.target as HTMLDivElement).style.scale = '1.2')}
+      onMouseLeave={e => ((e.target as HTMLDivElement).style.scale = '1')}
       icon={icon}
       size="lg"
+      colorScheme={''} // so the change in color when hovering is deactivated
       fontSize="30px"
       textColor={tinycolor(bg).getBrightness() > 200 ? '#282828' : 'white'}
       boxSize="70px"
