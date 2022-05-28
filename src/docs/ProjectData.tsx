@@ -8,6 +8,18 @@ export type Project = {
 
 export const projectData: Project[] = [
   {
+    title: 'HTML Portfolio Website',
+    short_description: 'Portfolio website made from scratch',
+    description: [
+      'I have been meaning to code a website from scratch for a long time, so when I started applying for Co-Op jobs I thought it would be a great idea to make a portfolio one.',
+      'The first version of the website (still accessible here: https://szeckirjr.github.io/PortfolioWebsite/) was coded entirely in HTML, CSS and JavaScript.',
+      'The second version (what you are seeing right now) is coded in React using TypeScript and the Chakra UI library.',
+      'The hardest part about this website was making it responsive for different sized screens, especially with the first version. I had first coded all my pages without thinking about it, and would only later find out how bad it looked on my phone, but I was able to recode every page to make it responsive to all screen sizes.',
+    ],
+    github_url: 'https://github.com/szeckirjr/PortfolioWebsite',
+    tags: ['React', 'TypeScript', 'Chakra UI', 'HTML', 'CSS', 'JavaScript'],
+  },
+  {
     title: 'Keyword-Out-Of-Context (KWOC)',
     short_description:
       'Generate an alphabetical list of the key words used in a text file, listing every instance of each word with its immediate context (line and line number).',
@@ -30,16 +42,5 @@ export const projectData: Project[] = [
     ],
     github_url: 'https://github.com/szeckirjr/VEXKitRobot',
     tags: ['C', 'RobotC', 'Design', 'Sensors', 'Electrical board'],
-  },
-  {
-    title: 'HTML Portfolio Website',
-    short_description:
-      'Portfolio website made from scratch using HTML, CSS, and JavaScript.',
-    description: [
-      'I have been meaning to code a website from scratch for a long time, so when I started applying for Co-Op jobs I thought it would be a great idea to make a portfolio one.',
-      'The website was coded entirely in HTML, CSS and JavaScript. The hardest part about this website was making it responsive for different sized screens. I had first coded all my pages without thinking about it, and would only later find out how bad it looked on my phone, but I was able to recode every page to make it responsive to all screen sizes.',
-    ],
-    github_url: 'https://github.com/szeckirjr/PortfolioWebsite',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
   },
 ];
