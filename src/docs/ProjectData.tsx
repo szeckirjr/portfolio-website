@@ -8,7 +8,7 @@ export type Project = {
 
 export const projectData: Project[] = [
   {
-    title: 'HTML Portfolio Website',
+    title: 'Portfolio Website',
     short_description: 'Portfolio website made from scratch',
     description: [
       'I have been meaning to code a website from scratch for a long time, so when I started applying for Co-Op jobs I thought it would be a great idea to make a portfolio one.',
@@ -18,6 +18,19 @@ export const projectData: Project[] = [
     ],
     github_url: 'https://github.com/szeckirjr/PortfolioWebsite',
     tags: ['React', 'TypeScript', 'Chakra UI', 'HTML', 'CSS', 'JavaScript'],
+  },
+  {
+    title: 'CourseUp',
+    short_description:
+      'CourseUp is a web application that allows students to find, schedule, and register for courses at UVic',
+    description: [
+      'CourseUp is a web application that allows users to search for courses and register for them. It is built using React, TypeScript, and the Chakra UI library.',
+      'It was built by students at VikeLabs, which I joined at the end of last year.',
+      "I worked with tools I hadn't used before, and I learned a lot from my team!",
+      'I was able to implement to CourseUp features such as timetable sharing, which allows users to share their timetable with others.',
+    ],
+    github_url: 'https://github.com/VikeLabs/courseup',
+    tags: ['React', 'TypeScript', 'Express', 'Chakra UI', 'CSS', 'JavaScript'],
   },
   {
     title: 'Keyword-Out-Of-Context (KWOC)',
