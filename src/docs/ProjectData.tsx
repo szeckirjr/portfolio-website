@@ -16,7 +16,7 @@ export const projectData: Project[] = [
       'The second version (what you are seeing right now) is coded in React using TypeScript and the Chakra UI library.',
       'The hardest part about this website was making it responsive for different sized screens, especially with the first version. I had first coded all my pages without thinking about it, and would only later find out how bad it looked on my phone, but I was able to recode every page to make it responsive to all screen sizes.',
     ],
-    github_url: 'https://github.com/szeckirjr/PortfolioWebsite',
+    github_url: 'https://github.com/szeckirjr/portfolio-website',
     tags: ['React', 'TypeScript', 'Chakra UI', 'HTML', 'CSS', 'JavaScript'],
   },
   {
