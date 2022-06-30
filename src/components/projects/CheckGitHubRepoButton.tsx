@@ -15,7 +15,6 @@ export default function CheckGitHubRepoButton({ repo_url }: Props) {
       target="_blank"
       leftIcon={<AiFillGithub />}
       rightIcon={<BsArrowUpRight />}
-      bg="#333"
       _hover={{
         bg: '#606060',
       }}

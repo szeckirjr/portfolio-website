@@ -9,10 +9,14 @@ import {
   useMediaQuery,
   Box,
   Divider,
+  Button,
 } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
 import { Project } from '../../docs/ProjectData';
 import ProjectModal from './ProjectModal';
+import { AiFillGithub } from 'react-icons/ai';
+import { IoMdOpen } from 'react-icons/io';
+import CheckGitHubRepoButton from './CheckGitHubRepoButton';
 
 export function ProjectCard({
   project,
@@ -32,7 +36,7 @@ export function ProjectCard({
   });
 
   const tagList = project.tags.map(tag => (
-    <Tag m={2} color="white" bg={colors[project.tags.indexOf(tag)]}>
+    <Tag my={2} color="white" bg={colors[project.tags.indexOf(tag)]}>
       {tag}
     </Tag>
   ));
@@ -45,7 +49,7 @@ export function ProjectCard({
       {(index % 2 === 0 || !isLargeScreen) && (
         <Image
           borderRadius="lg"
-          shadow={project.shadow}
+          shadow="dark-lg"
           width={isLargeScreen ? '50%' : '80%'}
           maxWidth="600px"
           src={
@@ -72,11 +76,8 @@ export function ProjectCard({
         >
           <Image
             src={project.scribble ?? '/scribbles/28.svg'}
-            height="3em"
-            filter={
-              project.scribbleFilter ??
-              'invert(82%) sepia(35%) saturate(6905%) hue-rotate(320deg) brightness(89%) contrast(105%)'
-            }
+            height="3.5em"
+            filter={project.scribbleFilter}
           />
           <Heading size="2xl">{project.title}</Heading>
           <Text
@@ -86,6 +87,7 @@ export function ProjectCard({
             {project.short_description}
           </Text>
         </VStack>
+        <CheckGitHubRepoButton repo_url={project.github_url} />
         <HStack wrap="wrap" justifyContent="center">
           {tagList}
         </HStack>
@@ -94,7 +96,8 @@ export function ProjectCard({
       {index % 2 !== 0 && isLargeScreen && (
         <Image
           borderRadius="lg"
-          shadow={project.shadow}
+          shadow="dark-lg"
+          p={5}
           width={isLargeScreen ? '60%' : '80%'}
           maxWidth="500px"
           src={

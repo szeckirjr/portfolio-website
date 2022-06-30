@@ -41,9 +41,7 @@ export const projectData: Project[] = [
     github_url: 'https://github.com/VikeLabs/courseup',
     tags: ['React', 'TypeScript', 'Express', 'Chakra UI', 'CSS', 'JavaScript'],
     image: '/projects/courseup.png',
-    scribble: '/scribbles/58.svg',
-    scribbleFilter:
-      'invert(53%) sepia(50%) saturate(684%) hue-rotate(144deg) brightness(90%) contrast(90%)',
+    scribble: '/scribbles/25.svg',
   },
   {
     title: 'Keyword-Out-Of-Context (KWOC)',
@@ -56,8 +54,9 @@ export const projectData: Project[] = [
     ],
     github_url: 'https://github.com/szeckirjr/KWOCinC',
     tags: ['C', 'Python', 'File input', 'valgrind'],
-    scribble: '/scribbles/43.svg',
-    scribbleFilter: '',
+    scribble: '/scribbles/18.svg',
+    scribbleFilter:
+      'invert(65%) sepia(86%) saturate(6762%) hue-rotate(338deg) brightness(81%) contrast(110%)',
     image: '/projects/kwoc_c.png',
   },
   {
@@ -72,5 +71,6 @@ export const projectData: Project[] = [
     github_url: 'https://github.com/szeckirjr/VEXKitRobot',
     tags: ['C', 'RobotC', 'Design', 'Sensors', 'Electrical board'],
     image: 'projects/vex_robot.png',
+    scribble: '/scribbles/62.svg',
   },
 ];
