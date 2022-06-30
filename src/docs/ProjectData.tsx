@@ -4,6 +4,10 @@ export type Project = {
   description: string[];
   github_url?: string;
   tags: string[];
+  image?: string;
+  scribble?: string;
+  scribbleFilter?: string;
+  shadow?: string;
 };
 
 export const projectData: Project[] = [
@@ -18,6 +22,11 @@ export const projectData: Project[] = [
     ],
     github_url: 'https://github.com/szeckirjr/portfolio-website',
     tags: ['React', 'TypeScript', 'Chakra UI', 'HTML', 'CSS', 'JavaScript'],
+    image: '/projects/portfolio_site.png',
+    scribble: '/scribbles/28.svg',
+    scribbleFilter:
+      'invert(87%) sepia(39%) saturate(5335%) hue-rotate(352deg) brightness(102%) contrast(109%)',
+    shadow: 'dark-lg',
   },
   {
     title: 'CourseUp',
@@ -31,6 +40,10 @@ export const projectData: Project[] = [
     ],
     github_url: 'https://github.com/VikeLabs/courseup',
     tags: ['React', 'TypeScript', 'Express', 'Chakra UI', 'CSS', 'JavaScript'],
+    image: '/projects/courseup.png',
+    scribble: '/scribbles/58.svg',
+    scribbleFilter:
+      'invert(53%) sepia(50%) saturate(684%) hue-rotate(144deg) brightness(90%) contrast(90%)',
   },
   {
     title: 'Keyword-Out-Of-Context (KWOC)',
@@ -42,7 +55,10 @@ export const projectData: Project[] = [
       'The hardest part about this project was resolving memory leak problems with C, but by using valgrind I was able to restore all bits of memory.',
     ],
     github_url: 'https://github.com/szeckirjr/KWOCinC',
-    tags: ['C', 'File input', 'valgrind'],
+    tags: ['C', 'Python', 'File input', 'valgrind'],
+    scribble: '/scribbles/43.svg',
+    scribbleFilter: '',
+    image: '/projects/kwoc_c.png',
   },
   {
     title: 'VEX Robot',
@@ -55,5 +71,6 @@ export const projectData: Project[] = [
     ],
     github_url: 'https://github.com/szeckirjr/VEXKitRobot',
     tags: ['C', 'RobotC', 'Design', 'Sensors', 'Electrical board'],
+    image: 'projects/vex_robot.png',
   },
 ];
