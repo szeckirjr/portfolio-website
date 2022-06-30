@@ -3,8 +3,8 @@ import { projectData } from '../docs/ProjectData';
 import { ProjectCard } from './projects/ProjectCard';
 
 export default function Projects() {
-  const listOfProjects = projectData.map(project => (
-    <ProjectCard {...project} />
+  const listOfProjects = projectData.map((project, idx) => (
+    <ProjectCard index={idx} project={project} />
   ));
 
   return (
