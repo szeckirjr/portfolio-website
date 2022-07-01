@@ -12,7 +12,7 @@ import {
   Button,
 } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
-import { Project } from '../../docs/ProjectData';
+import { Project, TagColors } from '../../docs/ProjectData';
 import ProjectModal from './ProjectModal';
 import { AiFillGithub } from 'react-icons/ai';
 import { IoMdOpen } from 'react-icons/io';
@@ -35,8 +35,9 @@ export function ProjectCard({
     count: project.tags.length,
   });
 
-  const tagList = project.tags.map(tag => (
-    <Tag my={2} color="white" bg={colors[project.tags.indexOf(tag)]}>
+  const tagList = project.tags.map((tag, idx) => (
+    //@ts-ignore
+    <Tag size="lg" my={2} color="white" bg={TagColors[tag] ?? colors[idx]}>
       {tag}
     </Tag>
   ));

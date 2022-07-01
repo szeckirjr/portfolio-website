@@ -10,16 +10,28 @@ export type Project = {
 };
 
 export const TagColors = {
-  JavaScript: '#f7df1e',
-  TypeScript: '#2b7489',
-  React: '#61dafb',
-  'Node.js': '#3eba9f',
-  Express: '#f7df1e',
-  'Chakra UI': '#2b7489',
-  HTML: '#f7df1e',
-  CSS: '#f7df1e',
-  C: '#f7df1e',
-  Python: '#f7df1e',
+  React: '#F94144',
+  'React Native': '#F94144',
+  CSS: '#F94144',
+  C: '#F94144',
+  TypeScript: '#F8961E',
+  RobotC: '#F8961E',
+  HTML: '#F8961E',
+  Redux: '#F9C74F',
+  'File input': '#F9C74F',
+  Firebase: '#90BE6D',
+  Design: '#90BE6D',
+  MongoDB: '#90BE6D',
+  'Chakra UI': '#90BE6D',
+  'Spotify API': '#43AA8B',
+  'Express.js': '#43AA8B',
+  Sensors: '#43AA8B',
+  Python: '#43AA8B',
+  Scraper: '#577590',
+  'Node.js': '#577590',
+  'Electrical board': '#577590',
+  valgrind: '#577590',
+  JavaScript: '#F3722C',
 };
 
 export const projectData: Project[] = [
