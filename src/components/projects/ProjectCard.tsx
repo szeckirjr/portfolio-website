@@ -26,7 +26,7 @@ export function ProjectCard({
   index: number;
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [isLargeScreen] = useMediaQuery('(min-width: 650px)');
+  const [isLargeScreen] = useMediaQuery('(min-width: 700px)');
 
   const colors = randomColor({
     alpha: 0.8,
@@ -50,6 +50,7 @@ export function ProjectCard({
         <Image
           borderRadius="lg"
           shadow="dark-lg"
+          p={3}
           width={isLargeScreen ? '50%' : '80%'}
           maxWidth="600px"
           src={
@@ -79,7 +80,12 @@ export function ProjectCard({
             height="3.5em"
             filter={project.scribbleFilter}
           />
-          <Heading size="2xl">{project.title}</Heading>
+          <Heading
+            textAlign={index % 2 !== 0 && isLargeScreen ? 'right' : 'left'}
+            size="2xl"
+          >
+            {project.title}
+          </Heading>
           <Text
             textAlign={index % 2 !== 0 && isLargeScreen ? 'right' : 'left'}
             fontSize="2xl"
@@ -97,7 +103,7 @@ export function ProjectCard({
         <Image
           borderRadius="lg"
           shadow="dark-lg"
-          p={5}
+          p={3}
           width={isLargeScreen ? '60%' : '80%'}
           maxWidth="500px"
           src={

@@ -7,26 +7,62 @@ export type Project = {
   image?: string;
   scribble?: string;
   scribbleFilter?: string;
-  shadow?: string;
+};
+
+export const TagColors = {
+  JavaScript: '#f7df1e',
+  TypeScript: '#2b7489',
+  React: '#61dafb',
+  'Node.js': '#3eba9f',
+  Express: '#f7df1e',
+  'Chakra UI': '#2b7489',
+  HTML: '#f7df1e',
+  CSS: '#f7df1e',
+  C: '#f7df1e',
+  Python: '#f7df1e',
 };
 
 export const projectData: Project[] = [
   {
-    title: 'Portfolio Website',
-    short_description: 'Portfolio website made from scratch',
-    description: [
-      'I have been meaning to code a website from scratch for a long time, so when I started applying for Co-Op jobs I thought it would be a great idea to make a portfolio one.',
-      'The first version of the website (still accessible here: https://szeckirjr.github.io/PortfolioWebsite/) was coded entirely in HTML, CSS and JavaScript.',
-      'The second version (what you are seeing right now) is coded in React using TypeScript and the Chakra UI library.',
-      'The hardest part about this website was making it responsive for different sized screens, especially with the first version. I had first coded all my pages without thinking about it, and would only later find out how bad it looked on my phone, but I was able to recode every page to make it responsive to all screen sizes.',
+    title: 'Spotific',
+    short_description:
+      'A React Native app that uses the Spotify API and scrapes the Metacritic website to get you reviews and scores on your top artists and albums.',
+    description: [],
+    tags: [
+      'React Native',
+      'TypeScript',
+      'Redux',
+      'Firebase',
+      'Spotify API',
+      'Scraper',
     ],
-    github_url: 'https://github.com/szeckirjr/portfolio-website',
-    tags: ['React', 'TypeScript', 'Chakra UI', 'HTML', 'CSS', 'JavaScript'],
-    image: '/projects/portfolio_site.png',
-    scribble: '/scribbles/28.svg',
+    image: '/projects/spotific.png',
+    scribble: '/scribbles/24.svg',
+  },
+  {
+    title: 'Care Plan Builder',
+    short_description:
+      'Drag-and-drop web application for the creation of care plans, which can then be converted into FHIR, a health-care specific data type that is suitable for analysis.',
+    description: [],
+    tags: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express.js', 'Node.js'],
+    image: '/projects/careplan_builder.png',
+    scribble: '/scribbles/67.svg',
+  },
+  {
+    title: 'Keyword-Out-Of-Context (KWOC)',
+    short_description:
+      'Generate an alphabetical list of the key words used in a text file, listing every instance of each word with its immediate context (line and line number).',
+    description: [
+      'This project was an assignment for my Software Development Methods class - SENG265.',
+      'The goal of this project was to code a program that can generate a concordance from a text file, which is an alphabetical list of the principal words used in a text file, listing every instance of each word with its immediate context (line and line number).',
+      'The hardest part about this project was resolving memory leak problems with C, but by using valgrind I was able to restore all bits of memory.',
+    ],
+    github_url: 'https://github.com/szeckirjr/KWOCinC',
+    tags: ['C', 'Python', 'File input', 'valgrind'],
+    scribble: '/scribbles/18.svg',
     scribbleFilter:
-      'invert(87%) sepia(39%) saturate(5335%) hue-rotate(352deg) brightness(102%) contrast(109%)',
-    shadow: 'dark-lg',
+      'invert(65%) sepia(86%) saturate(6762%) hue-rotate(338deg) brightness(81%) contrast(110%)',
+    image: '/projects/kwoc_c.png',
   },
   {
     title: 'CourseUp',
@@ -44,20 +80,20 @@ export const projectData: Project[] = [
     scribble: '/scribbles/25.svg',
   },
   {
-    title: 'Keyword-Out-Of-Context (KWOC)',
-    short_description:
-      'Generate an alphabetical list of the key words used in a text file, listing every instance of each word with its immediate context (line and line number).',
+    title: 'Portfolio Website',
+    short_description: 'Portfolio website made from scratch',
     description: [
-      'This project was an assignment for my Software Development Methods class - SENG265.',
-      'The goal of this project was to code a program that can generate a concordance from a text file, which is an alphabetical list of the principal words used in a text file, listing every instance of each word with its immediate context (line and line number).',
-      'The hardest part about this project was resolving memory leak problems with C, but by using valgrind I was able to restore all bits of memory.',
+      'I have been meaning to code a website from scratch for a long time, so when I started applying for Co-Op jobs I thought it would be a great idea to make a portfolio one.',
+      'The first version of the website (still accessible here: https://szeckirjr.github.io/PortfolioWebsite/) was coded entirely in HTML, CSS and JavaScript.',
+      'The second version (what you are seeing right now) is coded in React using TypeScript and the Chakra UI library.',
+      'The hardest part about this website was making it responsive for different sized screens, especially with the first version. I had first coded all my pages without thinking about it, and would only later find out how bad it looked on my phone, but I was able to recode every page to make it responsive to all screen sizes.',
     ],
-    github_url: 'https://github.com/szeckirjr/KWOCinC',
-    tags: ['C', 'Python', 'File input', 'valgrind'],
-    scribble: '/scribbles/18.svg',
+    github_url: 'https://github.com/szeckirjr/portfolio-website',
+    tags: ['React', 'TypeScript', 'Chakra UI', 'HTML', 'CSS', 'JavaScript'],
+    image: '/projects/portfolio_site.png',
+    scribble: '/scribbles/28.svg',
     scribbleFilter:
-      'invert(65%) sepia(86%) saturate(6762%) hue-rotate(338deg) brightness(81%) contrast(110%)',
-    image: '/projects/kwoc_c.png',
+      'invert(87%) sepia(39%) saturate(5335%) hue-rotate(352deg) brightness(102%) contrast(109%)',
   },
   {
     title: 'VEX Robot',
