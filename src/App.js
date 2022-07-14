@@ -6,12 +6,12 @@ import Menubar from './components/Menubar';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
-import { Switch, Route, HashRouter } from 'react-router-dom';
+import { Switch, Route, HashRouter, BrowserRouter } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 function App() {
   return (
-    <HashRouter basename="/">
+    <BrowserRouter>
       <ParallaxProvider>
         <ChakraProvider theme={theme}>
           <Menubar />
@@ -34,7 +34,7 @@ function App() {
           </Switch>
         </ChakraProvider>
       </ParallaxProvider>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
