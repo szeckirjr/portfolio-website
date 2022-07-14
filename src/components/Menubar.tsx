@@ -46,7 +46,9 @@ export default function Menubar({
             bgColor={
               location.pathname === '/' + title.toLowerCase()
                 ? '#282828'
-                : undefined
+                : location.pathname === '/' && title === 'Home'
+                ? '#282828'
+                : 'transparent'
             }
             size="lg"
             variant="ghost"
