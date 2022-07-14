@@ -4,18 +4,11 @@ import {
   Text,
   Tag,
   HStack,
-  useDisclosure,
   Image,
   useMediaQuery,
-  Box,
-  Divider,
-  Button,
 } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
 import { Project, TagColors } from '../../docs/ProjectData';
-import ProjectModal from './ProjectModal';
-import { AiFillGithub } from 'react-icons/ai';
-import { IoMdOpen } from 'react-icons/io';
 import CheckGitHubRepoButton from './CheckGitHubRepoButton';
 
 export function ProjectCard({
@@ -25,7 +18,6 @@ export function ProjectCard({
   project: Project;
   index: number;
 }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const [isLargeScreen] = useMediaQuery('(min-width: 700px)');
 
   const colors = randomColor({
