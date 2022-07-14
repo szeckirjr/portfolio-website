@@ -28,28 +28,24 @@ export default function About() {
         <Heading zIndex={2} size="xl">
           This is me:
         </Heading>
-        <Parallax y={[-40, 50]}>
-          <Image
-            position="relative"
-            maxH="400px"
-            src={process.env.PUBLIC_URL + '/babyself.JPG'}
-            mb={32}
-            onLoad={() => parallaxController.update()}
-          />
-        </Parallax>
+        <Image
+          position="relative"
+          maxH="400px"
+          src={process.env.PUBLIC_URL + '/babyself.JPG'}
+          mb={32}
+          onLoad={() => parallaxController.update()}
+        />
         <Heading zIndex={2} size="xl">
           Ok this WAS me some years ago
         </Heading>
         <Heading zIndex={2} size="xl">
           Nowadays I look more like this:
         </Heading>
-        <Parallax y={[20, -20]}>
-          <Image
-            maxH="400px"
-            src={process.env.PUBLIC_URL + '/currentself.JPG'}
-            onLoad={() => parallaxController.update()}
-          />
-        </Parallax>
+        <Image
+          maxH="400px"
+          src={process.env.PUBLIC_URL + '/currentself.JPG'}
+          onLoad={() => parallaxController.update()}
+        />
         <Heading zIndex={2} size="xl">
           I was born and raised in{' '}
           <Box as="span" color={randCol}>
@@ -69,13 +65,11 @@ export default function About() {
             University of Victoria
           </Box>
         </Heading>
-        <Parallax x={[-30, 30]}>
-          <Image
-            maxH="400px"
-            src={process.env.PUBLIC_URL + '/uvicself.JPG'}
-            onLoad={() => parallaxController.update()}
-          />
-        </Parallax>
+        <Image
+          maxH="400px"
+          src={process.env.PUBLIC_URL + '/uvicself.jpg'}
+          onLoad={() => parallaxController.update()}
+        />
 
         <Heading zIndex={2} size="xl">
           Now, I am currently entering my{' '}
@@ -85,7 +79,7 @@ export default function About() {
           <br />
           <br />I have completed{' '}
           <Box as="span" color={randCol}>
-            two co-op terms
+            three co-op terms
           </Box>{' '}
           so far and have gained experience with{' '}
           <Box as="span" color={randCol}>
