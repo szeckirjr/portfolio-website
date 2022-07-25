@@ -76,21 +76,21 @@ export const projectData: Project[] = [
       'invert(65%) sepia(86%) saturate(6762%) hue-rotate(338deg) brightness(81%) contrast(110%)',
     image: '/projects/kwoc_c.png',
   },
-  {
-    title: 'CourseUp',
-    short_description:
-      'CourseUp is a web application that allows students to find, schedule, and register for courses at UVic',
-    description: [
-      'CourseUp is a web application that allows users to search for courses and build timetbales for easier term scheduling and registration. It is built using React, TypeScript, and the Chakra UI library, as well as Firebase for the backend.',
-      'It was built by students at VikeLabs, a programming club at UVic, which I joined at the end of 2021.',
-      "I worked with tools I hadn't used before, and I learned a lot from my team!",
-      'I was able to implement to CourseUp features such as timetable sharing, which allows users to share their timetable with others.',
-    ],
-    github_url: 'https://github.com/VikeLabs/courseup',
-    tags: ['React', 'TypeScript', 'Express', 'Chakra UI', 'CSS', 'JavaScript'],
-    image: '/projects/courseup.png',
-    scribble: '/scribbles/25.svg',
-  },
+  // {
+  //   title: 'CourseUp',
+  //   short_description:
+  //     'CourseUp is a web application that allows students to find, schedule, and register for courses at UVic',
+  //   description: [
+  //     'CourseUp is a web application that allows users to search for courses and build timetbales for easier term scheduling and registration. It is built using React, TypeScript, and the Chakra UI library, as well as Firebase for the backend.',
+  //     'It was built by students at VikeLabs, a programming club at UVic, which I joined at the end of 2021.',
+  //     "I worked with tools I hadn't used before, and I learned a lot from my team!",
+  //     'I was able to implement to CourseUp features such as timetable sharing, which allows users to share their timetable with others.',
+  //   ],
+  //   github_url: 'https://github.com/VikeLabs/courseup',
+  //   tags: ['React', 'TypeScript', 'Express', 'Chakra UI', 'CSS', 'JavaScript'],
+  //   image: '/projects/courseup.png',
+  //   scribble: '/scribbles/25.svg',
+  // },
   {
     title: 'Portfolio Website',
     short_description: 'Portfolio website made from scratch',
