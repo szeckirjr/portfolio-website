@@ -5,8 +5,8 @@ import { FaLinkedinIn, FaSpotify } from 'react-icons/fa';
 import { ImGithub } from 'react-icons/im';
 import { MdEmail } from 'react-icons/md';
 import { SiGoodreads } from 'react-icons/si';
-import { getRandomInt } from '../docs/FuncLib';
-import SocialMediaButton from './contact/SocialMediaButton';
+import { getRandomInt } from '../../docs/FuncLib';
+import SocialMediaButton from '../contact/SocialMediaButton';
 
 export default function Contact() {
   const [imgSrc, setImgSrc] = useState(

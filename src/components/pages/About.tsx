@@ -1,14 +1,15 @@
-import { Heading, VStack, Image, Center, Box } from '@chakra-ui/react';
-import randomColor from 'randomcolor';
-import { useController } from 'react-scroll-parallax';
-import tinycolor from 'tinycolor2';
+import { Heading, VStack, Image, Center, Box } from "@chakra-ui/react";
+import randomColor from "randomcolor";
+import { useController } from "react-scroll-parallax";
+import tinycolor from "tinycolor2";
+import React from "react";
 
-export default function About() {
+export default function About(): JSX.Element {
   const { parallaxController } = useController();
 
-  var randCol = randomColor({ luminosity: 'bright' });
+  let randCol = randomColor({ luminosity: "bright" });
   while (tinycolor(randCol).getBrightness() < 200) {
-    randCol = randomColor({ luminosity: 'bright' });
+    randCol = randomColor({ luminosity: "bright" });
   }
   return (
     <Center
@@ -30,7 +31,7 @@ export default function About() {
         <Image
           position="relative"
           maxH="400px"
-          src={process.env.PUBLIC_URL + '/babyself.JPG'}
+          src={process.env.PUBLIC_URL + "/babyself.JPG"}
           mb={32}
           onLoad={() => parallaxController.update()}
         />
@@ -41,12 +42,12 @@ export default function About() {
           Nowadays I look more like this:
         </Heading>
         <Image
-          maxH="400px"
-          src={process.env.PUBLIC_URL + '/currentself.JPG'}
+          maxH="200px"
+          src={process.env.PUBLIC_URL + "/currentself.JPG"}
           onLoad={() => parallaxController.update()}
         />
         <Heading zIndex={2} size="xl">
-          I was born and raised in{' '}
+          I was born and raised in{" "}
           <Box as="span" color={randCol}>
             Porto Alegre
           </Box>
@@ -54,40 +55,40 @@ export default function About() {
         </Heading>
         <Image
           maxH="400px"
-          src={process.env.PUBLIC_URL + '/poamap.jpg'}
+          src={process.env.PUBLIC_URL + "/poamap.jpg"}
           onLoad={() => parallaxController.update()}
         />
         <Heading zIndex={2} size="xl">
-          {' '}
-          In 2018, I moved to Victoria, B.C., to go to the{' '}
+          {" "}
+          In 2018, I moved to Victoria, B.C., to go to the{" "}
           <Box as="span" color={randCol}>
             University of Victoria
           </Box>
         </Heading>
         <Image
           maxH="400px"
-          src={process.env.PUBLIC_URL + '/uvicself.jpg'}
+          src={process.env.PUBLIC_URL + "/uvicself.jpg"}
           onLoad={() => parallaxController.update()}
         />
 
         <Heading zIndex={2} size="xl">
-          Now, I am currently entering my{' '}
+          Now, I am currently entering my{" "}
           <Box as="span" color={randCol}>
             4th year in Software Engineering
           </Box>
           <br />
-          <br />I have completed{' '}
+          <br />I have completed{" "}
           <Box as="span" color={randCol}>
             three co-op terms
-          </Box>{' '}
-          so far and have gained experience with{' '}
+          </Box>{" "}
+          so far and have gained experience with{" "}
           <Box as="span" color={randCol}>
             web development
-          </Box>{' '}
-          and{' '}
+          </Box>{" "}
+          and{" "}
           <Box as="span" color={randCol}>
             data analysis
-          </Box>{' '}
+          </Box>{" "}
         </Heading>
       </VStack>
     </Center>

@@ -4,8 +4,8 @@ import 'react-vertical-timeline-component/style.min.css';
 import {
   coopExperienceData,
   otherExperienceData,
-} from '../docs/ExperienceData';
-import WorkTimelineElement from './experience/WorkTimelineElement';
+} from '../../docs/ExperienceData';
+import WorkTimelineElement from '../experience/WorkTimelineElement';
 
 export default function Experience() {
   const timelineCoopExperience = coopExperienceData.map(p => (

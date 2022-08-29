@@ -1,58 +1,61 @@
-import { Center, Heading, HStack, Image, VStack } from '@chakra-ui/react';
-import randomColor from 'randomcolor';
-import { useState } from 'react';
-import { RandomReveal } from 'react-random-reveal';
-import { CharactersRequired } from 'react-random-reveal/lib/types';
-import { getRandomInt } from '../docs/FuncLib';
+import { Center, Heading, HStack, Image, VStack } from "@chakra-ui/react";
+import randomColor from "randomcolor";
+import { useState } from "react";
+import { RandomReveal } from "react-random-reveal";
+import { CharactersRequired } from "react-random-reveal/lib/types";
+import { getRandomInt } from "../../docs/FuncLib";
+import { ScrollToTop } from "../common/ScrollToTop";
+import React from "react";
 
-export default function Home(): JSX.Element {
+export default function Home({colors, setColors}: {colors: string[], setColors: (val: string[]) => void}): JSX.Element {
   const [imgSrc, setImgSrc] = useState(
     [
       process.env.PUBLIC_URL,
-      '/memojis/memoji',
+      "/memojis/memoji",
       String(getRandomInt(1, 6)),
-      '.png',
-    ].join('')
+      ".png",
+    ].join("")
   );
-  const [colors, setColors] = useState(randomColor({ count: 2 }));
+  
 
   const handleClick = () => {
     setImgSrc(
       [
         process.env.PUBLIC_URL,
-        '/memojis/memoji',
+        "/memojis/memoji",
         String(getRandomInt(1, 6)),
-        '.png',
-      ].join('')
+        ".png",
+      ].join("")
     );
     setColors(randomColor({ count: 2 }));
   };
 
   const charSet: Array<string> =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@%$#&*'.split(
-      ''
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@%$#&*".split(
+      ""
     );
 
   return (
     <>
+      <ScrollToTop color={colors[0]} />
       <Center
         id="home"
         bg="#303030"
         p="20px"
         h="100vh"
         minW="100vw"
-        style={{ scrollSnapAlign: 'start' }}
+        style={{ scrollSnapAlign: "start" }}
       >
         <HStack>
           <VStack spacing={8} w="100%" minW="100vw">
             <Image
               cursor="pointer"
-              bgGradient={['linear(to-b,', colors[0], ',', colors[1], ')'].join(
-                ''
+              bgGradient={["linear(to-b,", colors[0], ",", colors[1], ")"].join(
+                ""
               )}
               boxSize="230px"
               w="100%"
-              objectFit='contain'
+              objectFit="contain"
               onClick={handleClick}
               src={imgSrc}
             />

@@ -24,7 +24,6 @@
     "react-vertical-timeline-component": "^3.3.3",
     "tinycolor2": "^1.4.2",
     "tsparticles": "^1.33.3",
-    "typescript": "^4.3.5",
     "vertical-timeline-component-for-react": "^1.0.7",
     "web-vitals": "^0.2.4"
   },
@@ -56,7 +55,16 @@
     "@types/randomcolor": "^0.5.6",
     "@types/react-router-dom": "^5.1.8",
     "@types/react-vertical-timeline-component": "^3.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "eslint": "^8.23.0",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-react": "^7.31.1",
     "gh-pages": "^3.2.3",
-    "react-random-word": "^0.0.2"
+    "react-random-word": "^0.0.2",
+    "typescript": "^4.8.2"
   }
 }
