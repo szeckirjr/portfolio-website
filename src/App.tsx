@@ -3,7 +3,7 @@ import { ChakraProvider, theme } from "@chakra-ui/react";
 import { ParallaxProvider } from "react-scroll-parallax";
 import PortfolioWebsite from "./components";
 
-function App () {
+function App (): JSX.Element {
   return (
     <ParallaxProvider>
       <ChakraProvider theme={theme}>
