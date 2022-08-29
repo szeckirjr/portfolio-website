@@ -17,6 +17,7 @@ export default function Experience() {
 
   return (
     <VStack pl={10} pr={10} pt={40} pb={20} spacing={38} bg="#303030">
+      <Heading size="2xl" color="white">Experience</Heading>
       <Text color="white" fontSize="1.25em">
         Click on any element to learn more about my role
       </Text>

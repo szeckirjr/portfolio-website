@@ -44,14 +44,15 @@ export default function Home(): JSX.Element {
         style={{ scrollSnapAlign: 'start' }}
       >
         <HStack>
-          <VStack spacing={8}>
+          <VStack spacing={8} w="100%" minW="100vw">
             <Image
               cursor="pointer"
-              borderRadius="full"
               bgGradient={['linear(to-b,', colors[0], ',', colors[1], ')'].join(
                 ''
               )}
               boxSize="230px"
+              w="100%"
+              objectFit='contain'
               onClick={handleClick}
               src={imgSrc}
             />
