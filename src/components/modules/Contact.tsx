@@ -41,9 +41,9 @@ export default function Contact({
     <Center
       id="home"
       bg="#303030"
+      w="100%"
       p="20px"
       h="100vh"
-      minW="100vw"
       style={{ scrollSnapAlign: 'start' }}
     >
       <HStack>
@@ -71,9 +71,7 @@ export default function Contact({
           <Image
             cursor="pointer"
             borderRadius="full"
-            bgGradient={['linear(to-b,', colors[0], ',', colors[1], ')'].join(
-              ''
-            )}
+            bgGradient={`linear(to-b, ${colors[0]}, ${colors[1]})`}
             boxSize="230px"
             onClick={handleClick}
             src={imgSrc}

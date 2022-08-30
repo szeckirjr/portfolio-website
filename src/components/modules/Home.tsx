@@ -46,7 +46,6 @@ export default function Home({
         bg="#303030"
         p="20px"
         h="100vh"
-        minW="100vw"
         style={{ scrollSnapAlign: 'start' }}
       >
         <HStack>

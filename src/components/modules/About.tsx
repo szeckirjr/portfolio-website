@@ -12,15 +12,7 @@ export default function About(): JSX.Element {
     randCol = randomColor({ luminosity: 'bright' });
   }
   return (
-    <Center
-      w="100vw"
-      bg="#303030"
-      color="white"
-      pl={10}
-      pr={10}
-      pt={40}
-      pb={20}
-    >
+    <Center w="100%" bg="#303030" color="white" pl={10} pr={10} pt={40} pb={20}>
       <VStack spacing={38} align="flex-start" w="50vw" minW="300px">
         <Heading zIndex={2} size="2xl">
           About

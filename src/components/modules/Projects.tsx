@@ -9,17 +9,13 @@ export default function Projects(): JSX.Element {
   ));
 
   return (
-    <VStack w="100%"
-    bg="#303030" spacing={5}>
-      <Heading color="white" size="3xl">Projects</Heading>
-    <Flex
-      
-      wrap="wrap"
-      justify="space-evenly"
-      alignContent="flex-start"
-    >
-      {listOfProjects}
-    </Flex>
+    <VStack w="100%" bg="#303030" spacing={5} pt={10}>
+      <Heading color="white" size="3xl">
+        Projects
+      </Heading>
+      <Flex wrap="wrap" justify="space-evenly" alignContent="flex-start">
+        {listOfProjects}
+      </Flex>
     </VStack>
   );
 }
