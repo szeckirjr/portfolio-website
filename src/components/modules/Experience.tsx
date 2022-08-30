@@ -17,7 +17,16 @@ export default function Experience(): JSX.Element {
   ));
 
   return (
-    <VStack pl={10} pr={10} pt={40} pb={20} spacing={38} bg="#303030" w="100%">
+    <VStack
+      id="experience"
+      pl={10}
+      pr={10}
+      pt={12}
+      pb={20}
+      spacing={38}
+      bg="#303030"
+      w="100%"
+    >
       <Heading color="white" size="2xl">
         Experience
       </Heading>

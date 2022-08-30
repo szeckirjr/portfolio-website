@@ -39,10 +39,10 @@ export default function Contact({
 
   return (
     <Center
-      id="home"
+      id="contact"
       bg="#303030"
       w="100%"
-      p="20px"
+      p={12}
       h="100vh"
       style={{ scrollSnapAlign: 'start' }}
     >

@@ -12,32 +12,8 @@ export default function About(): JSX.Element {
     randCol = randomColor({ luminosity: 'bright' });
   }
   return (
-    <Center w="100%" bg="#303030" color="white" pl={10} pr={10} pt={40} pb={20}>
-      <VStack spacing={38} align="flex-start" w="50vw" minW="300px">
-        <Heading zIndex={2} size="2xl">
-          About
-        </Heading>
-        <Heading zIndex={2} size="xl">
-          This is me:
-        </Heading>
-        <Image
-          position="relative"
-          maxH="400px"
-          src={process.env.PUBLIC_URL + '/babyself.JPG'}
-          mb={32}
-          onLoad={() => parallaxController.update()}
-        />
-        <Heading zIndex={2} size="xl">
-          Ok this WAS me some years ago
-        </Heading>
-        <Heading zIndex={2} size="xl">
-          Nowadays I look more like this:
-        </Heading>
-        <Image
-          maxH="400px"
-          src={process.env.PUBLIC_URL + '/currentself.JPG'}
-          onLoad={() => parallaxController.update()}
-        />
+    <Center id="about" w="100%" bg="#303030" color="white" px={10} py={20}>
+      <VStack spacing={38} w="50vw" minW="300px">
         <Heading zIndex={2} size="xl">
           I was born and raised in{' '}
           <Box as="span" color={randCol}>

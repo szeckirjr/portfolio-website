@@ -9,8 +9,8 @@ export default function Projects(): JSX.Element {
   ));
 
   return (
-    <VStack w="100%" bg="#303030" spacing={5} pt={10}>
-      <Heading color="white" size="3xl">
+    <VStack w="100%" bg="#303030" spacing={5} id="projects" pt={12}>
+      <Heading color="white" size="2xl">
         Projects
       </Heading>
       <Flex wrap="wrap" justify="space-evenly" alignContent="flex-start">

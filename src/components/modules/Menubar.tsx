@@ -29,27 +29,31 @@ export default function Menubar({
 
   function createButton(title: PageTitle) {
     return isLargeScreen ? (
-          <Button
-            colorScheme="whiteAlpha"
-            color="white"
-            bgColor={'#282828'}
-            size="lg"
-            variant="ghost"
-            leftIcon={pageIcons[title]}
-          >
-            {title}
-          </Button>
-        ) : (
-          <IconButton
-            aria-label={title}
-            colorScheme="whiteAlpha"
-            color="white"
-            bgColor={'#282828'}
-            size="lg"
-            variant="ghost"
-            icon={pageIcons[title]}
-          />
-        );
+      <Button
+        colorScheme="whiteAlpha"
+        color="white"
+        size="lg"
+        variant="ghost"
+        leftIcon={pageIcons[title]}
+        onClick={() =>
+          document
+            .getElementById(`${title.toLowerCase()}`)
+            ?.scrollIntoView({ behavior: 'smooth' })
+        }
+      >
+        {title}
+      </Button>
+    ) : (
+      <IconButton
+        aria-label={title}
+        colorScheme="whiteAlpha"
+        color="white"
+        bgColor={'#282828'}
+        size="lg"
+        variant="ghost"
+        icon={pageIcons[title]}
+      />
+    );
   }
 
   const listOfButtons: JSX.Element[] = pages.map(title =>
@@ -58,12 +62,11 @@ export default function Menubar({
 
   return (
     <Flex
-      shadow="xl"
+      bgGradient={`linear(to-t, transparent, #303030)`}
       p={3}
       position="fixed"
       zIndex={4}
       w="100%"
-      bg="#303030"
       justify="space-evenly"
     >
       {listOfButtons}
