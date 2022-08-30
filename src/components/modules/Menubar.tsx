@@ -15,8 +15,8 @@ export default function Menubar({
   currPage: string;
   setCurrPage: (val: string) => void;
 }): JSX.Element {
-  type PageTitle = 'Home' | 'About' | 'Experience' | 'Projects' | 'Contact';
-  const pages = ['Home', 'About', 'Experience', 'Projects', 'Contact'];
+  type PageTitle = 'Home' | 'Experience' | 'Projects' | 'Contact';
+  const pages = ['Home', 'Projects', 'Experience', 'Contact'];
   const pageIcons = {
     Home: <HiHome />,
     About: <BsFillPersonFill />,
