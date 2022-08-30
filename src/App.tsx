@@ -6,37 +6,22 @@ import Menubar from './components/Menubar';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 function App(): JSX.Element {
   return (
-    <BrowserRouter>
       <ParallaxProvider>
         <ChakraProvider theme={theme}>
           <Menubar currPage='' setCurrPage={() => {
             console.log("wow")
           }} />
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/experience">
-              <Experience />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/projects">
-              <Projects />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
+          <About />
+          <Experience />
+          <Contact />
+          <Projects />
+          <Home />
         </ChakraProvider>
       </ParallaxProvider>
-    </BrowserRouter>
   );
 }
 

@@ -1,5 +1,4 @@
 import { Button, Flex, IconButton, useMediaQuery } from '@chakra-ui/react';
-import { Link, useLocation } from 'react-router-dom';
 import { HiHome } from 'react-icons/hi';
 import {
   BsFillPersonFill,
@@ -27,30 +26,13 @@ export default function Menubar({
   };
 
   const [isLargeScreen] = useMediaQuery('(min-width: 720px)');
-  const location = useLocation();
 
   function createButton(title: PageTitle) {
-    console.log(
-      location.pathname,
-      title,
-      location.pathname === '/' + title.toLowerCase()
-    );
-    return (
-      <Link
-        onClick={() => window.scrollTo(0, 0)}
-        to={'/' + title.toLowerCase()}
-      >
-        {isLargeScreen ? (
+    return isLargeScreen ? (
           <Button
             colorScheme="whiteAlpha"
             color="white"
-            bgColor={
-              location.pathname === '/' + title.toLowerCase()
-                ? '#282828'
-                : location.pathname === '/' && title === 'Home'
-                ? '#282828'
-                : 'transparent'
-            }
+            bgColor={'#282828'}
             size="lg"
             variant="ghost"
             leftIcon={pageIcons[title]}
@@ -62,18 +44,12 @@ export default function Menubar({
             aria-label={title}
             colorScheme="whiteAlpha"
             color="white"
-            bgColor={
-              location.pathname === '/' + title.toLowerCase()
-                ? '#282828'
-                : undefined
-            }
+            bgColor={'#282828'}
             size="lg"
             variant="ghost"
             icon={pageIcons[title]}
           />
-        )}
-      </Link>
-    );
+        );
   }
 
   const listOfButtons: JSX.Element[] = pages.map(title =>

@@ -1,6 +1,5 @@
 import { Heading, VStack, Image, Center, Box } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
-import { Link } from 'react-router-dom';
 import { useController } from 'react-scroll-parallax';
 import tinycolor from 'tinycolor2';
 import React from 'react';
@@ -89,21 +88,7 @@ export default function About(): JSX.Element {
           and{' '}
           <Box as="span" color={randCol}>
             data analysis
-          </Box>{' '}
-          <br />
-          <br />
-          If you want to hear more about it, check out my{' '}
-          <Link onClick={() => window.scrollTo(0, 0)} to="/experience">
-            <Box
-              as="span"
-              _hover={{ opacity: 0.5, transition: 'opacity 0.2s' }}
-              textDecoration="underline"
-              color={randCol}
-            >
-              experience page
-            </Box>
-            !
-          </Link>
+          </Box>
         </Heading>
       </VStack>
     </Center>
