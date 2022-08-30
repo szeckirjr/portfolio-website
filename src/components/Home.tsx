@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { RandomReveal } from 'react-random-reveal';
 import { CharactersRequired } from 'react-random-reveal/lib/types';
 import { getRandomInt } from '../docs/FuncLib';
+import React from 'react';
 
 export default function Home(): JSX.Element {
   const [imgSrc, setImgSrc] = useState(

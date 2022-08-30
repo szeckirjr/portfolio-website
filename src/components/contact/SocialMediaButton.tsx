@@ -1,5 +1,6 @@
 import { IconButton } from '@chakra-ui/react';
 import tinycolor from 'tinycolor2';
+import React from 'react';
 
 type Props = {
   aria_label: string;
@@ -13,7 +14,7 @@ export default function SocialMediaButton({
   bg,
   icon,
   href,
-}: Props) {
+}: Props): JSX.Element {
   return (
     <IconButton
       as="a"

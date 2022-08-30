@@ -21,9 +21,9 @@ export default function ExperienceModal({
   isOpen,
   onClose,
   experience,
-}: Props) {
-  const description = experience.description.map(d => (
-    <React.Fragment>
+}: Props): JSX.Element {
+  const description = experience.description.map((d, idx) => (
+    <React.Fragment key={idx}>
       {d}
       <br />
       <br />

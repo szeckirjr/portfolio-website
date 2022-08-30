@@ -6,13 +6,14 @@ import {
   otherExperienceData,
 } from '../docs/ExperienceData';
 import WorkTimelineElement from './experience/WorkTimelineElement';
+import React from 'react';
 
-export default function Experience() {
-  const timelineCoopExperience = coopExperienceData.map(p => (
-    <WorkTimelineElement {...p} />
+export default function Experience(): JSX.Element {
+  const timelineCoopExperience = coopExperienceData.map((p, idx) => (
+    <WorkTimelineElement key={idx} {...p} />
   ));
-  const timelineOtherExperience = otherExperienceData.map(p => (
-    <WorkTimelineElement {...p} />
+  const timelineOtherExperience = otherExperienceData.map((p, idx) => (
+    <WorkTimelineElement key={idx} {...p} />
   ));
 
   return (

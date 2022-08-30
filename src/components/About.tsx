@@ -1,13 +1,14 @@
 import { Heading, VStack, Image, Center, Box } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
 import { Link } from 'react-router-dom';
-import { Parallax, useController } from 'react-scroll-parallax';
+import { useController } from 'react-scroll-parallax';
 import tinycolor from 'tinycolor2';
+import React from 'react';
 
-export default function About() {
+export default function About(): JSX.Element {
   const { parallaxController } = useController();
 
-  var randCol = randomColor({ luminosity: 'bright' });
+  let randCol = randomColor({ luminosity: 'bright' });
   while (tinycolor(randCol).getBrightness() < 200) {
     randCol = randomColor({ luminosity: 'bright' });
   }

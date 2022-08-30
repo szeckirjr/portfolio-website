@@ -10,6 +10,7 @@ import {
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { Experience } from '../../docs/ExperienceData';
 import ExperienceModal from './ExperienceModal';
+import React from 'react';
 
 export default function WorkTimelineElement({
   title,
@@ -18,7 +19,7 @@ export default function WorkTimelineElement({
   color,
   range,
   icon,
-}: Experience) {
+}: Experience): JSX.Element {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <VerticalTimelineElement

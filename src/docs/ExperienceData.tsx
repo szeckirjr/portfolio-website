@@ -5,6 +5,7 @@ import {
 } from 'react-icons/ri';
 import { GiOpenBook } from 'react-icons/gi';
 import { FaCanadianMapleLeaf } from 'react-icons/fa';
+import React from 'react';
 
 export type Experience = {
   title: string;

@@ -9,7 +9,7 @@ export type Project = {
   scribbleFilter?: string;
 };
 
-export const TagColors = {
+export const TagColors: {[key: string]: string} = {
   React: '#F94144',
   'React Native': '#F94144',
   CSS: '#F94144',

@@ -7,6 +7,7 @@ import {
   BsFolderFill,
 } from 'react-icons/bs';
 import { AiFillPhone } from 'react-icons/ai';
+import React from 'react';
 
 export default function Menubar({
   currPage,

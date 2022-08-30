@@ -7,8 +7,9 @@ import { MdEmail } from 'react-icons/md';
 import { SiGoodreads } from 'react-icons/si';
 import { getRandomInt } from '../docs/FuncLib';
 import SocialMediaButton from './contact/SocialMediaButton';
+import React from 'react';
 
-export default function Contact() {
+export default function Contact(): JSX.Element {
   const [imgSrc, setImgSrc] = useState(
     [
       process.env.PUBLIC_URL,
