@@ -1,6 +1,6 @@
 import { Flex } from '@chakra-ui/react';
-import { projectData } from '../docs/ProjectData';
-import { ProjectCard } from './projects/ProjectCard';
+import { projectData } from '../../docs/ProjectData';
+import { ProjectCard } from '../projects/ProjectCard';
 import React from 'react';
 
 export default function Projects(): JSX.Element {
@@ -11,8 +11,6 @@ export default function Projects(): JSX.Element {
   return (
     <Flex
       w="100%"
-      h="100vh"
-      overflow="scroll"
       bg="#303030"
       wrap="wrap"
       justify="space-evenly"
