@@ -9,7 +9,13 @@ import { getRandomInt } from '../../docs/FuncLib';
 import SocialMediaButton from '../contact/SocialMediaButton';
 import React from 'react';
 
-export default function Contact(): JSX.Element {
+export default function Contact({
+  colors,
+  setColors,
+}: {
+  colors: string[];
+  setColors: (val: string[]) => void;
+}): JSX.Element {
   const [imgSrc, setImgSrc] = useState(
     [
       process.env.PUBLIC_URL,
@@ -18,7 +24,6 @@ export default function Contact(): JSX.Element {
       '.png',
     ].join('')
   );
-  const [colors, setColors] = useState(randomColor({ count: 2 }));
 
   const handleClick = () => {
     setImgSrc(

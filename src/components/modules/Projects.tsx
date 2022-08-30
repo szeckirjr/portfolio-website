@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, Heading, VStack } from '@chakra-ui/react';
 import { projectData } from '../../docs/ProjectData';
 import { ProjectCard } from '../projects/ProjectCard';
 import React from 'react';
@@ -9,15 +9,17 @@ export default function Projects(): JSX.Element {
   ));
 
   return (
+    <VStack w="100%"
+    bg="#303030" spacing={5}>
+      <Heading color="white" size="3xl">Projects</Heading>
     <Flex
-      w="100%"
-      bg="#303030"
+      
       wrap="wrap"
       justify="space-evenly"
       alignContent="flex-start"
-      pt="100px" // the menubar is 72px in height -> 100px padding on top so that it does not overlap
     >
       {listOfProjects}
     </Flex>
+    </VStack>
   );
 }

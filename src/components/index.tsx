@@ -1,12 +1,14 @@
-import Menubar from "./modules/Menubar";
-import React from "react";
-import About from "./modules/About";
-import Contact from "./modules/Contact";
-import Experience from "./modules/Experience";
-import Home from "./modules/Home";
-import Projects from "./modules/Projects";
+import Menubar from './modules/Menubar';
+import React, { useState } from 'react';
+import About from './modules/About';
+import Contact from './modules/Contact';
+import Experience from './modules/Experience';
+import Home from './modules/Home';
+import Projects from './modules/Projects';
+import randomColor from 'randomcolor';
 
 export function PortfolioWebsite(): JSX.Element {
+  const [colors, setColors] = useState(randomColor({ count: 2 }));
   return (
     <>
       <Menubar
@@ -15,11 +17,11 @@ export function PortfolioWebsite(): JSX.Element {
           console.log('wow');
         }}
       />
-      <Home />
+      <Home colors={colors} setColors={setColors} />
       <Projects />
       <About />
       <Experience />
-      <Contact />
+      <Contact colors={colors} setColors={setColors} />
     </>
   );
 }
