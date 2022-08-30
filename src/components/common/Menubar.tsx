@@ -27,9 +27,10 @@ export default function Menubar({
 
   const [isLargeScreen] = useMediaQuery('(min-width: 720px)');
 
-  function createButton(title: PageTitle) {
+  function createButton(title: PageTitle, idx: number): JSX.Element {
     return isLargeScreen ? (
       <Button
+        key={idx}
         colorScheme="whiteAlpha"
         color="white"
         size="lg"
@@ -45,6 +46,7 @@ export default function Menubar({
       </Button>
     ) : (
       <IconButton
+        key={idx}
         aria-label={title}
         colorScheme="whiteAlpha"
         color="white"
@@ -56,8 +58,8 @@ export default function Menubar({
     );
   }
 
-  const listOfButtons: JSX.Element[] = pages.map(title =>
-    createButton(title as PageTitle)
+  const listOfButtons: JSX.Element[] = pages.map((title, idx) =>
+    createButton(title as PageTitle, idx)
   );
 
   return (

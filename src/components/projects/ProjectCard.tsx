@@ -40,9 +40,6 @@ export function ProjectCard({
     </Tag>
   ));
 
-  console.log(process.env.PUBLIC_URL);
-  console.log(project.image);
-
   const content = (
     <>
       {(index % 2 === 0 || !isLargeScreen) && (
