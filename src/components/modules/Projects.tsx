@@ -9,7 +9,7 @@ export default function Projects(): JSX.Element {
   ));
 
   return (
-    <VStack w="100%" bg="#303030" spacing={5} id="projects" pt={12}>
+    <VStack w="100%" bg="#303030" spacing={1} id="projects">
       <Heading color="white" size="2xl">
         Projects
       </Heading>

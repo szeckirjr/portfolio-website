@@ -1,4 +1,4 @@
-import { Center, HStack, VStack, Image } from '@chakra-ui/react';
+import { Center, HStack, VStack, Image, Box } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
 import { useState } from 'react';
 import { FaLinkedinIn, FaSpotify } from 'react-icons/fa';
@@ -68,14 +68,29 @@ export default function Contact({
               href="mailto:eszeckirjr@gmail.com"
             />
           </HStack>
-          <Image
-            cursor="pointer"
+          <Box
             borderRadius="full"
             bgGradient={`linear(to-b, ${colors[0]}, ${colors[1]})`}
-            boxSize="230px"
+            cursor="pointer"
             onClick={handleClick}
-            src={imgSrc}
-          />
+            onMouseEnter={() =>
+              document
+                .getElementById(`contact-${imgSrc}`)
+                ?.style.setProperty('scale', '1.3')
+            }
+            onMouseLeave={() =>
+              document
+                .getElementById(`contact-${imgSrc}`)
+                ?.style.setProperty('scale', '1')
+            }
+          >
+            <Image
+              id={`contact-${imgSrc}`}
+              boxSize="230px"
+              src={imgSrc}
+              transition="all 0.6s cubic-bezier(1,-0.85,0,1.92)"
+            />
+          </Box>
           <HStack spacing={10}>
             <SocialMediaButton
               aria_label="Open my Goodreads"

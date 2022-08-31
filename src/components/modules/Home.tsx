@@ -1,4 +1,4 @@
-import { Center, Heading, HStack, Image, VStack } from '@chakra-ui/react';
+import { Box, Center, Heading, HStack, Image, VStack } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
 import { useState } from 'react';
 import { RandomReveal } from 'react-random-reveal';
@@ -50,15 +50,34 @@ export default function Home({
       >
         <HStack>
           <VStack spacing={8}>
-            <Image
-              cursor="pointer"
+            <Box
+              onMouseEnter={() =>
+                document
+                  .getElementById(`memoji-${imgSrc}`)
+                  ?.style.setProperty('scale', '1.3')
+              }
+              onMouseLeave={() =>
+                document
+                  .getElementById(`memoji-${imgSrc}`)
+                  ?.style.setProperty('scale', '1')
+              }
               bgGradient={`linear(to-b, ${colors[0]}, ${colors[1]})`}
-              boxSize="230px"
-              minW="100vw"
-              objectFit={'contain'}
-              onClick={handleClick}
-              src={imgSrc}
-            />
+            >
+              <Image
+                id={`memoji-${imgSrc}`}
+                cursor="pointer"
+                boxSize="230px"
+                minW="100vw"
+                objectFit={'contain'}
+                onClick={handleClick}
+                src={imgSrc}
+                transition="all 0.6s cubic-bezier(1,-0.85,0,1.92)"
+                style={{
+                  WebkitTransition: 'all 0.6s cubic-bezier(1,-0.85,0,1.92)',
+                  MozTransition: 'all 0.6s cubic-bezier(1,-0.85,0,1.92)',
+                }}
+              />
+            </Box>
             <Heading id="home" color="gray.200" size="3xl" px={3}>
               <RandomReveal
                 characters="Hello, I'm Eduardo"

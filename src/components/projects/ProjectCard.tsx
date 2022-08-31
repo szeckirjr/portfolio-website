@@ -11,7 +11,9 @@ import {
 import randomColor from 'randomcolor';
 import { Project, TagColors } from '../../docs/ProjectData';
 import CheckGitHubRepoButton from './CheckGitHubRepoButton';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { RandomReveal } from 'react-random-reveal';
+import { CharactersRequired } from 'react-random-reveal/lib/types';
 
 export function ProjectCard({
   project,
@@ -20,6 +22,10 @@ export function ProjectCard({
   project: Project;
   index: number;
 }): JSX.Element {
+  const charSet: Array<string> =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@%$#&*'.split(
+      ''
+    );
   const [isLargeScreen] = useMediaQuery('(min-width: 700px)');
 
   const colors = randomColor({
@@ -28,6 +34,23 @@ export function ProjectCard({
     luminosity: 'dark',
     count: project.tags.length,
   });
+
+  const [playing, setPlaying] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      const textTop = document
+        .getElementById(`project-title-${index}`)
+        ?.getBoundingClientRect().top;
+      const midLine = window.innerHeight / 2 + 200;
+      if (textTop && textTop < midLine) {
+        setPlaying(true);
+      }
+    });
+
+    return () => {
+      window.removeEventListener('scroll', () => null);
+    };
+  }, [index]);
 
   const tagList = project.tags.map((tag, idx) => (
     <Tag
@@ -41,8 +64,10 @@ export function ProjectCard({
     </Tag>
   ));
 
+  const isPortfolio = project.title === 'Portfolio Website';
   const projectImage = (
     <Image
+      id={`project-image-${index}`}
       borderRadius="xl"
       shadow="dark-lg"
       p={3}
@@ -52,8 +77,25 @@ export function ProjectCard({
         (project.image && process.env.PUBLIC_URL + project.image) ??
         'https://asia.olympus-imaging.com/content/000101300.jpg'
       }
-      onClick={() => project.title === 'Portfolio Website' && window.open('/')}
-      cursor={project.title === 'Portfolio Website' ? 'pointer' : 'default'}
+      onClick={() => isPortfolio && window.open('/')}
+      cursor={isPortfolio ? 'pointer' : 'default'}
+      onMouseEnter={() =>
+        isPortfolio &&
+        document
+          .getElementById(`project-image-${index}`)
+          ?.style.setProperty('scale', '1.05')
+      }
+      onMouseLeave={() =>
+        isPortfolio &&
+        document
+          .getElementById(`project-image-${index}`)
+          ?.style.setProperty('scale', '1')
+      }
+      transition="all 0.2s ease-in-out"
+      style={{
+        WebkitTransition: 'all 0.2s ease-in-out',
+        MozTransition: 'all 0.2s ease-in-out',
+      }}
       objectFit="contain"
     />
   );
@@ -81,11 +123,21 @@ export function ProjectCard({
             height="3.5em"
             filter={project.scribbleFilter}
           />
+
           <Heading
             textAlign={index % 2 !== 0 && isLargeScreen ? 'right' : 'left'}
             size="2xl"
+            id={`project-title-${index}`}
           >
-            {project.title}
+            <RandomReveal
+              characters={project.title}
+              isPlaying={playing}
+              duration={1.3}
+              speed={6}
+              revealDuration={0.9}
+              revealEasing="easeOutQuad"
+              characterSet={charSet as CharactersRequired}
+            />
           </Heading>
           <Text
             textAlign={index % 2 !== 0 && isLargeScreen ? 'right' : 'left'}
@@ -112,7 +164,7 @@ export function ProjectCard({
     <Stack
       direction={isLargeScreen ? 'row' : 'column'}
       m={isLargeScreen ? 0 : 4}
-      my={isLargeScreen ? 12 : 0}
+      my={12}
       borderRadius="lg"
       color="white"
       width={isLargeScreen ? '80%' : '100%'}
