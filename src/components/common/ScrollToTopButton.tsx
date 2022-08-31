@@ -36,6 +36,10 @@ export default function ScrollToTopButton({
       onMouseLeave={e => ((e.target as HTMLDivElement).style.scale = '1')}
       opacity={show ? 1 : 0}
       transition="all 0.3s ease-in-out"
+      style={{
+        WebkitTransition: 'all 0.3s ease-in-out',
+        MozTransition: 'all 0.3s ease-in-out',
+      }}
       bottom="5"
       right="5"
       size="lg"

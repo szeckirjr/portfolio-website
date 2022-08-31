@@ -26,6 +26,10 @@ export default function SocialMediaButton({
       onMouseLeave={e => ((e.target as HTMLDivElement).style.scale = '1')}
       shadow="lg"
       transition="all 0.2s ease-in-out"
+      style={{
+        WebkitTransition: 'all 0.2s ease-in-out',
+        MozTransition: 'all 0.2s ease-in-out',
+      }}
       icon={icon}
       size="lg"
       colorScheme={''} // so the change in color when hovering is deactivated
