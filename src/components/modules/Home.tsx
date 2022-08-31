@@ -59,7 +59,7 @@ export default function Home({
               onClick={handleClick}
               src={imgSrc}
             />
-            <Heading id="home" color="gray.200" size="3xl">
+            <Heading id="home" color="gray.200" size="3xl" px={3}>
               <RandomReveal
                 characters="Hello, I'm Eduardo"
                 isPlaying
@@ -70,7 +70,7 @@ export default function Home({
                 characterSet={charSet as CharactersRequired}
               />
             </Heading>
-            <Heading color={colors[1]}>
+            <Heading color={colors[1]} px={3}>
               <RandomReveal
                 characters="Software Engineering student @ UVic"
                 isPlaying

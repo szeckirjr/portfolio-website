@@ -53,6 +53,10 @@ export function ProjectCard({
             project.image ??
             'https://asia.olympus-imaging.com/content/000101300.jpg'
           }
+          onClick={() =>
+            project.title === 'Portfolio Website' && window.open('/')
+          }
+          cursor={project.title === 'Portfolio Website' ? 'pointer' : 'default'}
         />
       )}
 
@@ -111,6 +115,10 @@ export function ProjectCard({
             (project.image && process.env.PUBLIC_URL + project.image) ??
             'https://asia.olympus-imaging.com/content/000101300.jpg'
           }
+          onClick={() =>
+            project.title === 'Portfolio Website' && window.open('/')
+          }
+          cursor={project.title === 'Portfolio Website' ? 'pointer' : 'default'}
         />
       )}
     </>
