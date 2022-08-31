@@ -9,7 +9,9 @@ import { Box, VStack } from '@chakra-ui/react';
 import ScrollToTopButton from './common/ScrollToTopButton';
 
 export function PortfolioWebsite(): JSX.Element {
-  const [colors, setColors] = useState(randomColor({ count: 2 }));
+  const [colors, setColors] = useState(
+    randomColor({ count: 2, luminosity: 'bright' })
+  );
   return (
     <Box id="home">
       <Menubar

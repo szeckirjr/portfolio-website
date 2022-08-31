@@ -6,6 +6,7 @@ import {
   HStack,
   Image,
   useMediaQuery,
+  Stack,
 } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
 import { Project, TagColors } from '../../docs/ProjectData';
@@ -40,26 +41,26 @@ export function ProjectCard({
     </Tag>
   ));
 
+  const projectImage = (
+    <Image
+      borderRadius="xl"
+      shadow="dark-lg"
+      p={3}
+      width={isLargeScreen ? '60%' : '80%'}
+      maxWidth="600px"
+      src={
+        (project.image && process.env.PUBLIC_URL + project.image) ??
+        'https://asia.olympus-imaging.com/content/000101300.jpg'
+      }
+      onClick={() => project.title === 'Portfolio Website' && window.open('/')}
+      cursor={project.title === 'Portfolio Website' ? 'pointer' : 'default'}
+      objectFit="contain"
+    />
+  );
+
   const content = (
     <>
-      {(index % 2 === 0 || !isLargeScreen) && (
-        <Image
-          borderRadius="lg"
-          shadow="dark-lg"
-          p={3}
-          width={isLargeScreen ? '50%' : '80%'}
-          maxWidth="600px"
-          src={
-            project.image ??
-            'https://asia.olympus-imaging.com/content/000101300.jpg'
-          }
-          onClick={() =>
-            project.title === 'Portfolio Website' && window.open('/')
-          }
-          cursor={project.title === 'Portfolio Website' ? 'pointer' : 'default'}
-        />
-      )}
-
+      {(index % 2 === 0 || !isLargeScreen) && projectImage}
       <VStack
         width={isLargeScreen ? '50%' : '100%'}
         p={4}
@@ -103,46 +104,21 @@ export function ProjectCard({
           {tagList}
         </HStack>
       </VStack>
-
-      {index % 2 !== 0 && isLargeScreen && (
-        <Image
-          borderRadius="lg"
-          shadow="dark-lg"
-          p={3}
-          width={isLargeScreen ? '60%' : '80%'}
-          maxWidth="500px"
-          src={
-            (project.image && process.env.PUBLIC_URL + project.image) ??
-            'https://asia.olympus-imaging.com/content/000101300.jpg'
-          }
-          onClick={() =>
-            project.title === 'Portfolio Website' && window.open('/')
-          }
-          cursor={project.title === 'Portfolio Website' ? 'pointer' : 'default'}
-        />
-      )}
+      {index % 2 !== 0 && isLargeScreen && projectImage}
     </>
   );
 
-  return isLargeScreen ? (
-    <HStack
-      my={10}
+  return (
+    <Stack
+      direction={isLargeScreen ? 'row' : 'column'}
+      m={isLargeScreen ? 0 : 4}
+      my={isLargeScreen ? 12 : 0}
       borderRadius="lg"
       color="white"
-      width="80%"
-      justifyContent="space-evenly"
+      width={isLargeScreen ? '80%' : '100%'}
+      justifyContent={isLargeScreen ? 'space-evenly' : 'center'}
     >
       {content}
-    </HStack>
-  ) : (
-    <VStack
-      m={15}
-      borderRadius="lg"
-      color="white"
-      width="100%"
-      justifyContent="center"
-    >
-      {content}
-    </VStack>
+    </Stack>
   );
 }
