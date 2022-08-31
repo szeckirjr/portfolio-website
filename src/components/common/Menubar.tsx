@@ -28,37 +28,24 @@ export default function Menubar({
   const [isLargeScreen] = useMediaQuery('(min-width: 720px)');
 
   function createButton(title: PageTitle, idx: number): JSX.Element {
+    const config = {
+      key: idx,
+      colorScheme: 'whiteAlpha',
+      color: 'white',
+      size: 'lg',
+      variant: 'ghost',
+      onClick: () =>
+        document
+          .getElementById(title.toLowerCase())
+          ?.scrollIntoView({ behavior: 'smooth' }),
+      flexGrow: 1,
+    };
     return isLargeScreen ? (
-      <Button
-        key={idx}
-        colorScheme="whiteAlpha"
-        color="white"
-        size="lg"
-        variant="ghost"
-        leftIcon={pageIcons[title]}
-        onClick={() =>
-          document
-            .getElementById(`${title.toLowerCase()}`)
-            ?.scrollIntoView({ behavior: 'smooth' })
-        }
-      >
+      <Button {...config} leftIcon={pageIcons[title]}>
         {title}
       </Button>
     ) : (
-      <IconButton
-        key={idx}
-        aria-label={title}
-        colorScheme="whiteAlpha"
-        color="white"
-        size="lg"
-        variant="ghost"
-        icon={pageIcons[title]}
-        onClick={() =>
-          document
-            .getElementById(`${title.toLowerCase()}`)
-            ?.scrollIntoView({ behavior: 'smooth' })
-        }
-      />
+      <IconButton {...config} aria-label={title} icon={pageIcons[title]} />
     );
   }
 
