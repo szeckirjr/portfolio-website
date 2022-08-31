@@ -50,10 +50,14 @@ export default function Menubar({
         aria-label={title}
         colorScheme="whiteAlpha"
         color="white"
-        bgColor={'#282828'}
         size="lg"
         variant="ghost"
         icon={pageIcons[title]}
+        onClick={() =>
+          document
+            .getElementById(`${title.toLowerCase()}`)
+            ?.scrollIntoView({ behavior: 'smooth' })
+        }
       />
     );
   }
