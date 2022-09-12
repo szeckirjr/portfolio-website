@@ -36,7 +36,7 @@ export const TagColors: { [key: string]: string } = {
 
 export const projectData: Project[] = [
   {
-    title: 'Spotific',
+    title: 'Critify',
     short_description:
       'A React Native app that uses the Spotify API and scrapes the Metacritic website to get you reviews and scores on your top artists and albums.',
     description: [],
