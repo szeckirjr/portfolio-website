@@ -3,18 +3,12 @@ import { HiHome } from 'react-icons/hi';
 import {
   BsFillPersonFill,
   BsBriefcaseFill,
-  BsFolderFill,
+  BsFolderFill
 } from 'react-icons/bs';
 import { AiFillPhone } from 'react-icons/ai';
 import React from 'react';
 
-export default function Menubar({
-  currPage,
-  setCurrPage,
-}: {
-  currPage: string;
-  setCurrPage: (val: string) => void;
-}): JSX.Element {
+export const Menubar = (): JSX.Element => {
   type PageTitle = 'Home' | 'Experience' | 'Projects' | 'Contact';
   const pages = ['Home', 'Projects', 'Experience', 'Contact'];
   const pageIcons = {
@@ -22,12 +16,12 @@ export default function Menubar({
     About: <BsFillPersonFill />,
     Experience: <BsBriefcaseFill />,
     Projects: <BsFolderFill />,
-    Contact: <AiFillPhone />,
+    Contact: <AiFillPhone />
   };
 
   const [isLargeScreen] = useMediaQuery('(min-width: 720px)');
 
-  function createButton(title: PageTitle, idx: number): JSX.Element {
+  const createButton = (title: PageTitle, idx: number): JSX.Element => {
     const config = {
       key: idx,
       colorScheme: 'whiteAlpha',
@@ -38,7 +32,7 @@ export default function Menubar({
         document
           .getElementById(title.toLowerCase())
           ?.scrollIntoView({ behavior: 'smooth' }),
-      flexGrow: 1,
+      flexGrow: 1
     };
     return isLargeScreen ? (
       <Button {...config} leftIcon={pageIcons[title]}>
@@ -47,7 +41,7 @@ export default function Menubar({
     ) : (
       <IconButton {...config} aria-label={title} icon={pageIcons[title]} />
     );
-  }
+  };
 
   const listOfButtons: JSX.Element[] = pages.map((title, idx) =>
     createButton(title as PageTitle, idx)
@@ -65,4 +59,4 @@ export default function Menubar({
       {listOfButtons}
     </Flex>
   );
-}
+};

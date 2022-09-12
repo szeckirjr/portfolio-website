@@ -1,14 +1,13 @@
 import { Box, Center, Heading, HStack, Image, VStack } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { RandomReveal } from 'react-random-reveal';
 import { CharactersRequired } from 'react-random-reveal/lib/types';
 import { getRandomInt } from '../../docs/FuncLib';
-import React from 'react';
 
 export default function Home({
   colors,
-  setColors,
+  setColors
 }: {
   colors: string[];
   setColors: (val: string[]) => void;
@@ -18,7 +17,7 @@ export default function Home({
       process.env.PUBLIC_URL,
       '/memojis/memoji',
       String(getRandomInt(1, 6)),
-      '.png',
+      '.png'
     ].join('')
   );
 
@@ -28,7 +27,7 @@ export default function Home({
         process.env.PUBLIC_URL,
         '/memojis/memoji',
         String(getRandomInt(1, 6)),
-        '.png',
+        '.png'
       ].join('')
     );
     setColors(randomColor({ count: 2 }));
@@ -74,7 +73,7 @@ export default function Home({
                 transition="all 0.6s cubic-bezier(1,-0.85,0,1.92)"
                 style={{
                   WebkitTransition: 'all 0.6s cubic-bezier(1,-0.85,0,1.92)',
-                  MozTransition: 'all 0.6s cubic-bezier(1,-0.85,0,1.92)',
+                  MozTransition: 'all 0.6s cubic-bezier(1,-0.85,0,1.92)'
                 }}
               />
             </Box>

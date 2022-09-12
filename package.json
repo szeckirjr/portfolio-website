@@ -36,20 +36,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src --ext .js,.jsx,.ts,.tsx"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:react/recommended"
-    ],
-    "ignorePatterns": [
-      "node_modules/",
-      "build/",
-      "public/"
-    ]
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "browserslist": {
     "production": [
@@ -67,7 +54,13 @@
     "@types/jquery": "^3.5.14",
     "@types/randomcolor": "^0.5.6",
     "@types/react-vertical-timeline-component": "^3.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "gh-pages": "^3.2.3",
+    "prettier": "^2.7.1",
     "react-random-word": "^0.0.2"
   }
 }

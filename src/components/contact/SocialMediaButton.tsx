@@ -13,14 +13,14 @@ export default function SocialMediaButton({
   aria_label,
   bg,
   icon,
-  href,
+  href
 }: Props): JSX.Element {
   return (
     <IconButton
       as="a"
       target="_blank"
       href={href}
-      aria-label="Open my Linkedin"
+      aria-label={aria_label}
       bg={bg}
       onMouseEnter={e => ((e.target as HTMLDivElement).style.scale = '1.2')}
       onMouseLeave={e => ((e.target as HTMLDivElement).style.scale = '1')}
@@ -28,7 +28,7 @@ export default function SocialMediaButton({
       transition="all 0.2s ease-in-out"
       style={{
         WebkitTransition: 'all 0.2s ease-in-out',
-        MozTransition: 'all 0.2s ease-in-out',
+        MozTransition: 'all 0.2s ease-in-out'
       }}
       icon={icon}
       size="lg"
