@@ -4,7 +4,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import { PortfolioWebsite } from './components';
 import smoothscroll from 'smoothscroll-polyfill';
 
-const App = (): JSX.Element => {
+function App(): JSX.Element {
   smoothscroll.polyfill();
   return (
     <ParallaxProvider>
@@ -13,6 +13,6 @@ const App = (): JSX.Element => {
       </ChakraProvider>
     </ParallaxProvider>
   );
-};
+}
 
 export default App;

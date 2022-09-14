@@ -1,15 +1,17 @@
 import { ArrowUpIcon } from '@chakra-ui/icons';
 import { IconButton } from '@chakra-ui/react';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function ScrollToTopButton({
-  colors
+  colors,
 }: {
   colors: string[];
 }): JSX.Element {
   const [show, setShow] = useState(false);
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', (ev: Event) => {
       const scrollTop =
         window.pageYOffset !== undefined
           ? window.pageYOffset
@@ -36,7 +38,7 @@ export default function ScrollToTopButton({
       transition="all 0.3s ease-in-out"
       style={{
         WebkitTransition: 'all 0.3s ease-in-out',
-        MozTransition: 'all 0.3s ease-in-out'
+        MozTransition: 'all 0.3s ease-in-out',
       }}
       bottom="5"
       right="5"

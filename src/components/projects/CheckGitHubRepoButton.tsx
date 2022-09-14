@@ -7,9 +7,7 @@ type Props = {
   repo_url?: string;
 };
 
-export default function CheckGitHubRepoButton({
-  repo_url
-}: Props): JSX.Element | null {
+export default function CheckGitHubRepoButton({ repo_url }: Props): JSX.Element | null {
   return repo_url ? (
     <Button
       color="white"
@@ -20,7 +18,7 @@ export default function CheckGitHubRepoButton({
       rightIcon={<BsArrowUpRight />}
       bg="#595959"
       _hover={{
-        bg: '#808080'
+        bg: '#808080',
       }}
     >
       Check GitHub Repository

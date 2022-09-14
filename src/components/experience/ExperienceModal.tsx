@@ -6,7 +6,7 @@ import {
   ModalCloseButton,
   ModalBody,
   Heading,
-  Text
+  Text,
 } from '@chakra-ui/react';
 import React from 'react';
 import { Experience } from '../../docs/ExperienceData';
@@ -20,7 +20,7 @@ type Props = {
 export default function ExperienceModal({
   isOpen,
   onClose,
-  experience
+  experience,
 }: Props): JSX.Element {
   const description = experience.description.map((d, idx) => (
     <React.Fragment key={idx}>

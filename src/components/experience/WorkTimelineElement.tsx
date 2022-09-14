@@ -5,7 +5,7 @@ import {
   HStack,
   IconButton,
   Text,
-  useDisclosure
+  useDisclosure,
 } from '@chakra-ui/react';
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { Experience } from '../../docs/ExperienceData';
@@ -18,7 +18,7 @@ export default function WorkTimelineElement({
   description,
   color,
   range,
-  icon
+  icon,
 }: Experience): JSX.Element {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (

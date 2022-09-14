@@ -5,7 +5,7 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  Text
+  Text,
 } from '@chakra-ui/react';
 import React from 'react';
 import { Project } from '../../docs/ProjectData';
@@ -17,11 +17,7 @@ type Props = {
   project: Project;
 };
 
-export default function ProjectModal({
-  isOpen,
-  onClose,
-  project
-}: Props): JSX.Element {
+export default function ProjectModal({ isOpen, onClose, project }: Props): JSX.Element {
   const description = project.description.map((d, idx) => (
     <React.Fragment key={idx}>
       {d}

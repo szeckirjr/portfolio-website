@@ -1,16 +1,17 @@
 import { Center, HStack, VStack, Image, Box } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FaLinkedinIn, FaSpotify } from 'react-icons/fa';
 import { ImGithub } from 'react-icons/im';
 import { MdEmail } from 'react-icons/md';
 import { SiGoodreads } from 'react-icons/si';
 import { getRandomInt } from '../../docs/FuncLib';
 import SocialMediaButton from '../contact/SocialMediaButton';
+import React from 'react';
 
 export default function Contact({
   colors,
-  setColors
+  setColors,
 }: {
   colors: string[];
   setColors: (val: string[]) => void;
@@ -20,7 +21,7 @@ export default function Contact({
       process.env.PUBLIC_URL,
       '/memojis/memoji',
       String(getRandomInt(1, 6)),
-      '.png'
+      '.png',
     ].join('')
   );
 
@@ -30,7 +31,7 @@ export default function Contact({
         process.env.PUBLIC_URL,
         '/memojis/memoji',
         String(getRandomInt(1, 6)),
-        '.png'
+        '.png',
       ].join('')
     );
     setColors(randomColor({ count: 2 }));

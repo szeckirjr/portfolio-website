@@ -6,7 +6,7 @@ import {
   HStack,
   Image,
   useMediaQuery,
-  Stack
+  Stack,
 } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
 import { Project, TagColors } from '../../docs/ProjectData';
@@ -15,13 +15,13 @@ import React, { useEffect, useState } from 'react';
 import { RandomReveal } from 'react-random-reveal';
 import { CharactersRequired } from 'react-random-reveal/lib/types';
 
-export const ProjectCard = ({
+export function ProjectCard({
   project,
-  index
+  index,
 }: {
   project: Project;
   index: number;
-}): JSX.Element => {
+}): JSX.Element {
   const charSet: Array<string> =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@%$#&*'.split(
       ''
@@ -32,7 +32,7 @@ export const ProjectCard = ({
     alpha: 0.8,
     format: 'rgba',
     luminosity: 'dark',
-    count: project.tags.length
+    count: project.tags.length,
   });
 
   const [playing, setPlaying] = useState(false);
@@ -94,7 +94,7 @@ export const ProjectCard = ({
       transition="all 0.2s ease-in-out"
       style={{
         WebkitTransition: 'all 0.2s ease-in-out',
-        MozTransition: 'all 0.2s ease-in-out'
+        MozTransition: 'all 0.2s ease-in-out',
       }}
       objectFit="contain"
     />
@@ -173,4 +173,4 @@ export const ProjectCard = ({
       {content}
     </Stack>
   );
-};
+}
