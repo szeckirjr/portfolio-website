@@ -13,7 +13,7 @@ export const PortfolioWebsite = (): JSX.Element => {
     randomColor({ count: 2, luminosity: 'bright' })
   );
   return (
-    <Box id="home">
+    <Box id="home" overflowX="hidden">
       <Menubar />
       <Home colors={colors} setColors={setColors} />
       <VStack mx="auto" spacing={0} borderRadius="md">
