@@ -1,6 +1,5 @@
 import { IconButton } from '@chakra-ui/react';
 import tinycolor from 'tinycolor2';
-import React from 'react';
 
 type Props = {
   aria_label: string;

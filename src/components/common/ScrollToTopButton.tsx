@@ -1,6 +1,6 @@
 import { ArrowUpIcon } from '@chakra-ui/icons';
 import { IconButton } from '@chakra-ui/react';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function ScrollToTopButton({
   colors

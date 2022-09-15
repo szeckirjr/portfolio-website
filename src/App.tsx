@@ -1,4 +1,3 @@
-import React from 'react';
 import { ChakraProvider, theme } from '@chakra-ui/react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { PortfolioWebsite } from './components';
