@@ -129,15 +129,19 @@ export const ProjectCard = ({
             size="2xl"
             id={`project-title-${index}`}
           >
-            <RandomReveal
-              characters={project.title}
-              isPlaying={playing}
-              duration={1.3}
-              speed={6}
-              revealDuration={0.9}
-              revealEasing="easeOutQuad"
-              characterSet={charSet as CharactersRequired}
-            />
+            {isLargeScreen ? (
+              <RandomReveal
+                characters={project.title}
+                isPlaying={playing}
+                duration={1.3}
+                speed={6}
+                revealDuration={0.9}
+                revealEasing="easeOutQuad"
+                characterSet={charSet as CharactersRequired}
+              />
+            ) : (
+              project.title
+            )}
           </Heading>
           <Text
             textAlign={index % 2 !== 0 && isLargeScreen ? 'right' : 'left'}
