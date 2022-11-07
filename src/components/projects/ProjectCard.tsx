@@ -14,6 +14,7 @@ import CheckGitHubRepoButton from './CheckGitHubRepoButton';
 import React, { useEffect, useState } from 'react';
 import { RandomReveal } from 'react-random-reveal';
 import { CharactersRequired } from 'react-random-reveal/lib/types';
+import CheckDeployButton from './CheckDeployButton';
 
 export const ProjectCard = ({
   project,
@@ -64,7 +65,6 @@ export const ProjectCard = ({
     </Tag>
   ));
 
-  const isPortfolio = project.title === 'Portfolio Website';
   const projectImage = (
     <Image
       id={`project-image-${index}`}
@@ -77,16 +77,16 @@ export const ProjectCard = ({
         (project.image && process.env.PUBLIC_URL + project.image) ??
         'https://asia.olympus-imaging.com/content/000101300.jpg'
       }
-      onClick={() => isPortfolio && window.open('/')}
-      cursor={isPortfolio ? 'pointer' : 'default'}
+      onClick={() => project.url && window.open(project.url, '_blank')}
+      cursor={project.url ? 'pointer' : 'default'}
       onMouseEnter={() =>
-        isPortfolio &&
+        project.url &&
         document
           .getElementById(`project-image-${index}`)
           ?.style.setProperty('scale', '1.05')
       }
       onMouseLeave={() =>
-        isPortfolio &&
+        project.url &&
         document
           .getElementById(`project-image-${index}`)
           ?.style.setProperty('scale', '1')
@@ -150,6 +150,7 @@ export const ProjectCard = ({
             {project.short_description}
           </Text>
         </VStack>
+        <CheckDeployButton url={project.url} />
         <CheckGitHubRepoButton repo_url={project.github_url} />
         <HStack
           wrap="wrap"
