@@ -73,6 +73,16 @@ export const projectData: Project[] = [
     scribble: '/scribbles/25.svg'
   },
   {
+    title: 'UVic Scheduler API',
+    short_description:
+      'A GraphQL API that provides UVic course, professor, and room data to the UVic Scheduler application as part of the Software Engineering Capstone course.',
+    description: [],
+    tags: ['TypeScript', 'GraphQL', 'Prisma', 'PostgreSQL', 'Node'],
+    github_url: 'https://github.com/SENG499-Company-4/Backend',
+    image: '/projects/uvic_scheduler.png',
+    scribble: '/scribbles/39.svg'
+  },
+  {
     title: 'Keyword-Out-Of-Context (KWOC)',
     short_description:
       'Generate an alphabetical list of the key words used in a text file, listing every instance of each word with its immediate context (line and line number).',
