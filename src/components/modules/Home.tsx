@@ -2,7 +2,7 @@ import { Box, Center, Heading, HStack, Image, VStack } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
 import React, { useState } from 'react';
 import { RandomReveal } from 'react-random-reveal';
-import { CharactersRequired } from 'react-random-reveal/lib/types';
+import { Characters as CharactersRequired } from 'react-random-reveal/lib/types';
 import { getRandomInt } from '../../docs/FuncLib';
 
 export default function Home({
@@ -82,7 +82,6 @@ export default function Home({
                 characters="Hello, I'm Eduardo"
                 isPlaying
                 duration={1.3}
-                speed={6}
                 revealDuration={0.9}
                 revealEasing="easeOutQuad"
                 characterSet={charSet as CharactersRequired}
@@ -93,7 +92,6 @@ export default function Home({
                 characters="Software Engineering student @ UVic"
                 isPlaying
                 duration={2.3}
-                speed={6}
                 revealDuration={0.9}
                 revealEasing="easeOutQuad"
                 characterSet={charSet as CharactersRequired}

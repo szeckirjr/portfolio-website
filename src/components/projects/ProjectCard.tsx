@@ -2,18 +2,17 @@ import {
   Heading,
   VStack,
   Text,
-  Tag,
   HStack,
   Image,
   useMediaQuery,
   Stack
 } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
-import { Project, TagColors } from '../../docs/ProjectData';
+import { Project, ToolTags } from '../../docs/ProjectData';
 import CheckGitHubRepoButton from './CheckGitHubRepoButton';
 import React, { useEffect, useState } from 'react';
 import { RandomReveal } from 'react-random-reveal';
-import { CharactersRequired } from 'react-random-reveal/lib/types';
+import { Characters as CharactersRequired } from 'react-random-reveal/lib/types';
 import CheckDeployButton from './CheckDeployButton';
 
 export const ProjectCard = ({
@@ -54,15 +53,18 @@ export const ProjectCard = ({
   }, [index]);
 
   const tagList = project.tags.map((tag, idx) => (
-    <Tag
+    <HStack
       key={idx}
-      size="lg"
-      my={2}
+      spacing={2}
+      py={1}
+      px={2}
+      borderRadius={6}
       color="white"
-      bg={TagColors[tag] ?? colors[idx]}
+      bgColor={ToolTags[tag]?.color ?? colors[idx]}
     >
-      {tag}
-    </Tag>
+      {ToolTags[tag]?.icon}
+      <Text>{tag}</Text>
+    </HStack>
   ));
 
   const projectImage = (
@@ -134,7 +136,6 @@ export const ProjectCard = ({
                 characters={project.title}
                 isPlaying={playing}
                 duration={1.3}
-                speed={6}
                 revealDuration={0.9}
                 revealEasing="easeOutQuad"
                 characterSet={charSet as CharactersRequired}
@@ -153,10 +154,13 @@ export const ProjectCard = ({
         <CheckDeployButton url={project.url} />
         <CheckGitHubRepoButton repo_url={project.github_url} />
         <HStack
+          mt={8}
           wrap="wrap"
           justifyContent={
             index % 2 !== 0 && isLargeScreen ? 'flex-end' : 'flex-start'
           }
+          gap={3}
+          spacing={0}
         >
           {tagList}
         </HStack>

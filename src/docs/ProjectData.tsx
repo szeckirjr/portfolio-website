@@ -1,38 +1,162 @@
+/* eslint-disable max-lines */
+import Icon from '@chakra-ui/icon';
+import { DiCss3, DiCode, DiReact, DiHtml5 } from 'react-icons/di';
+import {
+  SiTypescript,
+  SiRedux,
+  SiFirebase,
+  SiMongodb,
+  SiSpotify,
+  SiPython,
+  SiNodedotjs,
+  SiJavascript,
+  SiGithub,
+  SiGithubactions,
+  SiGraphql,
+  SiDjango,
+  SiPostgresql,
+  SiPrisma,
+  SiExpress
+} from 'react-icons/si';
+import { FaRobot, FaFileImport, FaPalette } from 'react-icons/fa';
+import { BsLightningFill } from 'react-icons/bs';
+import { RiSensorFill } from 'react-icons/ri';
+import { CgWebsite } from 'react-icons/cg';
+import { GiElectricalResistance } from 'react-icons/gi';
+import { MdMemory, MdWeb } from 'react-icons/md';
+import {} from 'react-icons/io';
+
+export const ToolTags = {
+  React: {
+    icon: <Icon as={DiReact} />,
+    color: '#05a0c7'
+  },
+  'React Native': {
+    icon: <Icon as={DiReact} />,
+    color: '#05a0c7'
+  },
+  CSS: {
+    icon: <Icon as={DiCss3} />,
+    color: '#2965f1'
+  },
+  C: {
+    icon: <Icon as={DiCode} />,
+    color: '#2b358d'
+  },
+  TypeScript: {
+    icon: <Icon as={SiTypescript} />,
+    color: '#007acc'
+  },
+  RobotC: {
+    icon: <Icon as={FaRobot} />,
+    color: '#3c48a5'
+  },
+  HTML: {
+    icon: <Icon as={DiHtml5} />,
+    color: '#f06529'
+  },
+  Redux: {
+    icon: <Icon as={SiRedux} />,
+    color: '#764abc'
+  },
+  'File input': {
+    icon: <Icon as={FaFileImport} />,
+    color: '#43AA8B'
+  },
+  Firebase: {
+    icon: <Icon as={SiFirebase} />,
+    color: '#FFA611'
+  },
+  Design: {
+    icon: <Icon as={FaPalette} />,
+    color: '#F94144'
+  },
+  MongoDB: {
+    icon: <Icon as={SiMongodb} />,
+    color: '#4DB33D'
+  },
+  'Chakra UI': {
+    icon: <Icon as={BsLightningFill} />,
+    color: '#5ebcb3'
+  },
+  'Spotify API': {
+    icon: <Icon as={SiSpotify} />,
+    color: '#1DB954'
+  },
+  'Express.js': {
+    icon: <Icon as={SiExpress} />,
+    color: '#cdb70e'
+  },
+  Sensors: {
+    icon: <Icon as={RiSensorFill} />,
+    color: '#90BE6D'
+  },
+  Python: {
+    icon: <Icon as={SiPython} />,
+    color: '#306998'
+  },
+  Scraper: {
+    icon: <Icon as={CgWebsite} />,
+    color: '#577590'
+  },
+  'Node.js': {
+    icon: <Icon as={SiNodedotjs} />,
+    color: '#3c873a'
+  },
+  'Electrical board': {
+    icon: <Icon as={GiElectricalResistance} />,
+    color: '#577590'
+  },
+  valgrind: {
+    icon: <Icon as={MdMemory} />,
+    color: '#577590'
+  },
+  JavaScript: {
+    icon: <Icon as={SiJavascript} />,
+    color: '#cab112'
+  },
+  Git: {
+    icon: <Icon as={SiGithub} />,
+    color: '#F1502F'
+  },
+  'GitHub Actions': {
+    icon: <Icon as={SiGithubactions} />,
+    color: '#2088FF'
+  },
+  GraphQL: {
+    icon: <Icon as={SiGraphql} />,
+    color: '#e535ab'
+  },
+  'GitHub Pages': {
+    icon: <Icon as={MdWeb} />,
+    color: '#D8B863'
+  },
+  Django: {
+    icon: <Icon as={SiDjango} />,
+    color: '#092E20'
+  },
+  Prisma: {
+    icon: <Icon as={SiPrisma} />,
+    color: '#2D3748'
+  },
+  PostgreSQL: {
+    icon: <Icon as={SiPostgresql} />,
+    color: '#336791'
+  }
+};
+
+type PossibleTags = keyof typeof ToolTags;
+
 export type Project = {
   title: string;
   short_description: string;
   description: string[];
   github_url?: string;
   url?: string;
-  tags: string[];
+  tags: PossibleTags[];
   image?: string;
   scribble?: string;
   scribbleFilter?: string;
-};
-
-export const TagColors: { [key: string]: string } = {
-  React: '#F94144',
-  'React Native': '#F94144',
-  CSS: '#F94144',
-  C: '#F94144',
-  TypeScript: '#F8961E',
-  RobotC: '#F8961E',
-  HTML: '#F8961E',
-  Redux: '#F9C74F',
-  'File input': '#F9C74F',
-  Firebase: '#90BE6D',
-  Design: '#90BE6D',
-  MongoDB: '#90BE6D',
-  'Chakra UI': '#90BE6D',
-  'Spotify API': '#43AA8B',
-  'Express.js': '#43AA8B',
-  Sensors: '#43AA8B',
-  Python: '#43AA8B',
-  Scraper: '#577590',
-  'Node.js': '#577590',
-  'Electrical board': '#577590',
-  valgrind: '#577590',
-  JavaScript: '#F3722C'
 };
 
 export const projectData: Project[] = [
@@ -57,6 +181,23 @@ export const projectData: Project[] = [
     url: 'https://phacdatahub.github.io/datahub_portfolio/'
   },
   {
+    title: 'Health of Canadians Automation',
+    short_description:
+      'A Django web app to automate the process of data collection, cleaning, and dissemination for the yearly Health of Canadians report, dealing with 70+ indicators and hundreds of data points.',
+    description: [],
+    tags: [
+      'Python',
+      'Django',
+      'React',
+      'TypeScript',
+      'GraphQL',
+      'Git',
+      'GitHub Actions'
+    ],
+    image: '',
+    scribble: ''
+  },
+  {
     title: 'CourseUp',
     short_description:
       'CourseUp is a web application that allows students to find, schedule, and register for courses at UVic',
@@ -68,7 +209,14 @@ export const projectData: Project[] = [
     ],
     github_url: 'https://github.com/VikeLabs/courseup',
     url: 'https://courseup.vikelabs.ca',
-    tags: ['React', 'TypeScript', 'Express', 'Chakra UI', 'CSS', 'JavaScript'],
+    tags: [
+      'React',
+      'TypeScript',
+      'Express.js',
+      'Chakra UI',
+      'CSS',
+      'JavaScript'
+    ],
     image: '/projects/courseup.png',
     scribble: '/scribbles/25.svg'
   },
@@ -77,7 +225,7 @@ export const projectData: Project[] = [
     short_description:
       'A GraphQL API that provides UVic course, professor, and room data to the UVic Scheduler application as part of the Software Engineering Capstone course.',
     description: [],
-    tags: ['TypeScript', 'GraphQL', 'Prisma', 'PostgreSQL', 'Node'],
+    tags: ['TypeScript', 'GraphQL', 'Prisma', 'PostgreSQL', 'Node.js'],
     github_url: 'https://github.com/SENG499-Company-4/Backend',
     image: '/projects/uvic_scheduler.png',
     scribble: '/scribbles/39.svg'

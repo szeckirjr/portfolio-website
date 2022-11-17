@@ -1,12 +1,9 @@
 import { Heading, VStack, Image, Center, Box } from '@chakra-ui/react';
 import randomColor from 'randomcolor';
-import { useController } from 'react-scroll-parallax';
 import tinycolor from 'tinycolor2';
 import React from 'react';
 
 export default function About(): JSX.Element {
-  const { parallaxController } = useController();
-
   let randCol = randomColor({ luminosity: 'bright' });
   while (tinycolor(randCol).getBrightness() < 200) {
     randCol = randomColor({ luminosity: 'bright' });
@@ -21,11 +18,7 @@ export default function About(): JSX.Element {
           </Box>
           , a city in the southernmost state in Brazil
         </Heading>
-        <Image
-          maxH="400px"
-          src={process.env.PUBLIC_URL + '/poamap.jpg'}
-          onLoad={() => parallaxController.update()}
-        />
+        <Image maxH="400px" src={process.env.PUBLIC_URL + '/poamap.jpg'} />
         <Heading zIndex={2} size="xl">
           {' '}
           In 2018, I moved to Victoria, B.C., to go to the{' '}
@@ -33,11 +26,7 @@ export default function About(): JSX.Element {
             University of Victoria
           </Box>
         </Heading>
-        <Image
-          maxH="400px"
-          src={process.env.PUBLIC_URL + '/uvicself.jpg'}
-          onLoad={() => parallaxController.update()}
-        />
+        <Image maxH="400px" src={process.env.PUBLIC_URL + '/uvicself.jpg'} />
 
         <Heading zIndex={2} size="xl">
           Now, I am currently entering my{' '}
