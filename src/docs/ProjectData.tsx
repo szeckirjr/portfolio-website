@@ -16,10 +16,10 @@ import {
   SiDjango,
   SiPostgresql,
   SiPrisma,
-  SiExpress
+  SiExpress,
+  SiChakraui
 } from 'react-icons/si';
 import { FaRobot, FaFileImport, FaPalette } from 'react-icons/fa';
-import { BsLightningFill } from 'react-icons/bs';
 import { RiSensorFill } from 'react-icons/ri';
 import { CgWebsite } from 'react-icons/cg';
 import { GiElectricalResistance } from 'react-icons/gi';
@@ -76,7 +76,7 @@ export const ToolTags = {
     color: '#4DB33D'
   },
   'Chakra UI': {
-    icon: <Icon as={BsLightningFill} />,
+    icon: <Icon as={SiChakraui} />,
     color: '#5ebcb3'
   },
   'Spotify API': {
