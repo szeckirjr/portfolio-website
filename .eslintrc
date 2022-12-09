@@ -17,7 +17,7 @@
     "max-depth": ["error", { "max": 3 }],
     "max-lines": ["warn", { "max": 200 }],
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-unused-vars": ["warn"],
     "prettier/prettier": "error"
   }
 }

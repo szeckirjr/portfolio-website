@@ -1,16 +1,16 @@
 import React, { StrictMode } from 'react';
 import { ColorModeScript } from '@chakra-ui/react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
+// React 18 create React app and start it
+ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ColorModeScript />
     <App />
-  </StrictMode>,
-  document.getElementById('root')
+  </StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change

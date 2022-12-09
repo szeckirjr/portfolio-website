@@ -30,7 +30,7 @@ export default function Home({
         '.png'
       ].join('')
     );
-    setColors(randomColor({ count: 2 }));
+    setColors(randomColor({ count: 2, luminosity: 'light' }));
   };
 
   const charSet: Array<string> =

@@ -1,185 +1,186 @@
 import {
+  Box,
   Heading,
-  VStack,
-  Text,
-  HStack,
   Image,
-  useMediaQuery,
-  Stack
+  Spacer,
+  VStack,
+  Stack,
+  ButtonGroup
 } from '@chakra-ui/react';
-import randomColor from 'randomcolor';
-import { Project, ToolTags } from '../../docs/ProjectData';
-import CheckGitHubRepoButton from './CheckGitHubRepoButton';
-import React, { useEffect, useState } from 'react';
-import { RandomReveal } from 'react-random-reveal';
-import { Characters as CharactersRequired } from 'react-random-reveal/lib/types';
+import { useState } from 'react';
+import { Project } from '../../docs/ProjectData';
 import CheckDeployButton from './CheckDeployButton';
+import CheckGitHubRepoButton from './CheckGitHubRepoButton';
+import TagList from './TagList';
 
-export const ProjectCard = ({
+const ProjectCard = ({
   project,
-  index
+  index,
+  indexOpen,
+  setIndexOpen,
+  last
 }: {
   project: Project;
   index: number;
-}): JSX.Element => {
-  const charSet: Array<string> =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@%$#&*'.split(
-      ''
-    );
-  const [isLargeScreen] = useMediaQuery('(min-width: 700px)');
+  indexOpen: number;
+  setIndexOpen: (index: number) => void;
+  last: number;
+}) => {
+  const [clientX, setClientX] = useState(null);
+  const [clientY, setClientY] = useState(null);
 
-  const colors = randomColor({
-    alpha: 0.8,
-    format: 'rgba',
-    luminosity: 'dark',
-    count: project.tags.length
-  });
+  const handleMouseMove = e => {
+    const { currentTarget: target } = e;
 
-  const [playing, setPlaying] = useState(false);
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      const textTop = document
-        .getElementById(`project-title-${index}`)
-        ?.getBoundingClientRect().top;
-      const midLine = window.innerHeight / 2 + 200;
-      if (textTop && textTop < midLine) {
-        setPlaying(true);
-      }
-    });
+    const rect = target.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-    return () => {
-      window.removeEventListener('scroll', () => null);
-    };
-  }, [index]);
+    setClientX(x);
+    setClientY(y);
+  };
 
-  const tagList = project.tags.map((tag, idx) => (
-    <HStack
-      key={idx}
-      spacing={2}
-      py={1}
-      px={2}
-      borderRadius={6}
-      color="white"
-      bgColor={ToolTags[tag]?.color ?? colors[idx]}
-    >
-      {ToolTags[tag]?.icon}
-      <Text>{tag}</Text>
-    </HStack>
-  ));
-
-  const projectImage = (
-    <Image
-      id={`project-image-${index}`}
-      borderRadius="xl"
-      shadow="dark-lg"
-      p={3}
-      width={isLargeScreen ? '60%' : '80%'}
-      maxWidth="600px"
-      src={
-        (project.image && process.env.PUBLIC_URL + project.image) ??
-        'https://asia.olympus-imaging.com/content/000101300.jpg'
-      }
-      onClick={() => project.url && window.open(project.url, '_blank')}
-      cursor={project.url ? 'pointer' : 'default'}
-      onMouseEnter={() =>
-        project.url &&
-        document
-          .getElementById(`project-image-${index}`)
-          ?.style.setProperty('scale', '1.05')
-      }
-      onMouseLeave={() =>
-        project.url &&
-        document
-          .getElementById(`project-image-${index}`)
-          ?.style.setProperty('scale', '1')
-      }
-      transition="all 0.2s ease-in-out"
-      style={{
-        WebkitTransition: 'all 0.2s ease-in-out',
-        MozTransition: 'all 0.2s ease-in-out'
-      }}
-      objectFit="contain"
-    />
-  );
-
-  const content = (
-    <>
-      {(index % 2 === 0 || !isLargeScreen) && projectImage}
-      <VStack
-        width={isLargeScreen ? '50%' : '100%'}
-        p={4}
-        h="100%"
-        alignItems={
-          index % 2 !== 0 && isLargeScreen ? 'flex-end' : 'flex-start'
-        }
-      >
-        <VStack
-          w="100%"
-          alignItems={
-            index % 2 !== 0 && isLargeScreen ? 'flex-end' : 'flex-start'
-          }
-          flexGrow={1}
-        >
-          <Image
-            src={project.scribble ?? '/scribbles/28.svg'}
-            height="3.5em"
-            filter={project.scribbleFilter}
-          />
-
-          <Heading
-            textAlign={index % 2 !== 0 && isLargeScreen ? 'right' : 'left'}
-            size="2xl"
-            id={`project-title-${index}`}
-          >
-            {isLargeScreen ? (
-              <RandomReveal
-                characters={project.title}
-                isPlaying={playing}
-                duration={1.3}
-                revealDuration={0.9}
-                revealEasing="easeOutQuad"
-                characterSet={charSet as CharactersRequired}
-              />
-            ) : (
-              project.title
-            )}
-          </Heading>
-          <Text
-            textAlign={index % 2 !== 0 && isLargeScreen ? 'right' : 'left'}
-            fontSize="2xl"
-          >
-            {project.short_description}
-          </Text>
-        </VStack>
-        <CheckDeployButton url={project.url} />
-        <CheckGitHubRepoButton repo_url={project.github_url} />
-        <HStack
-          mt={8}
-          wrap="wrap"
-          justifyContent={
-            index % 2 !== 0 && isLargeScreen ? 'flex-end' : 'flex-start'
-          }
-          gap={3}
-          spacing={0}
-        >
-          {tagList}
-        </HStack>
-      </VStack>
-      {index % 2 !== 0 && isLargeScreen && projectImage}
-    </>
-  );
+  const open = indexOpen === index;
+  const toggleOpen = () => setIndexOpen(indexOpen === index ? -1 : index);
 
   return (
-    <Stack
-      direction={isLargeScreen ? 'row' : 'column'}
-      m={isLargeScreen ? 0 : 4}
-      my={12}
-      borderRadius="lg"
-      color="white"
-      width={isLargeScreen ? '80%' : '100%'}
-      justifyContent={isLargeScreen ? 'space-evenly' : 'center'}
+    <Box
+      cursor="pointer"
+      opacity={!open && indexOpen !== -1 ? 0.2 : 1}
+      onClick={toggleOpen}
+      transition="all 0.5s ease-in-out"
+      onMouseMove={handleMouseMove}
+      borderTopRadius={index === 0 ? 16 : 0}
+      borderBottomRadius={index === last ? 16 : 0}
+      bgColor="rgba(255, 255, 255, 0.1)"
+      width={
+        open
+          ? ['100%', '98%', '95%', '90%', '80%']
+          : ['98%', '95%', '90%', '85%', '70%']
+      }
+      position="relative"
+      zIndex={1}
+      _before={{
+        borderRadius: 'inherit',
+        content: `""`,
+        height: '100%',
+        left: 0,
+        transition: 'opacity 0.3s ease-in',
+        position: 'absolute',
+        opacity: 0,
+        top: 0,
+        width: '100%',
+        zIndex: 3,
+        background: `radial-gradient(1000px circle at ${clientX}px ${clientY}px, rgba(255,255,255,0.075), transparent 40%)`
+      }}
+      _after={{
+        background: `radial-gradient(400px circle at ${clientX}px ${clientY}px, rgba(255,255,255,1), transparent 40%)`,
+        borderRadius: 'inherit',
+        content: `""`,
+        height: '100%',
+        left: 0,
+        transition: 'opacity 0.5s ease-in-out',
+        position: 'absolute',
+        opacity: 0,
+        top: 0,
+        width: '100%',
+        zIndex: -1
+      }}
+      _hover={{
+        _before: {
+          opacity: 1
+        },
+        _after: {
+          opacity: 1
+        }
+      }}
     >
-      {content}
-    </Stack>
+      <VStack
+        bgColor="#292929"
+        borderRadius="inherit"
+        m="1px"
+        p={6}
+        transition="all 0.5s ease-in-out"
+        spacing={4}
+      >
+        <Stack
+          w="100%"
+          direction={['column', 'column', 'row', 'row']}
+          align="baseline"
+        >
+          <Heading
+            transition="all 0.5s ease-in-out"
+            fontSize={open ? '4xl' : '3xl'}
+            color="white"
+            fontWeight={800}
+          >
+            {project.title}
+          </Heading>
+          <Spacer />
+          <Heading
+            transition="all 0.5s ease-in-out"
+            fontSize={open ? '2xl' : 'xl'}
+            color="white"
+            fontWeight={800}
+            textAlign="end"
+          >
+            {project.date}
+          </Heading>
+        </Stack>
+        <Stack
+          w="100%"
+          direction={open ? 'column' : ['column', 'column', 'row', 'row']}
+        >
+          <TagList tags={project.tags} showTitle={open} />
+          <Spacer />
+          <ButtonGroup
+            isAttached
+            gap={1}
+            alignSelf={open ? 'start' : 'end'}
+            zIndex={4}
+          >
+            <CheckGitHubRepoButton
+              repo_url={project.github_url}
+              hideTitle={!open}
+            />
+            <CheckDeployButton url={project.url} hideTitle={!open} />
+          </ButtonGroup>
+        </Stack>
+        {open && (
+          <>
+            <Heading
+              alignSelf="start"
+              color="white"
+              fontWeight={400}
+              fontSize="xl"
+            >
+              {project.short_description}
+            </Heading>
+            <Spacer />
+            <Image
+              src={project.image}
+              alt={project.title}
+              w="80%"
+              maxH="50vh"
+              objectFit="cover"
+            />
+            <Spacer />
+            {project.description.map((desc, idx) => (
+              <Heading
+                key={idx}
+                alignSelf="start"
+                color="white"
+                fontWeight={400}
+                fontSize="xl"
+              >
+                {desc}
+              </Heading>
+            ))}
+          </>
+        )}
+      </VStack>
+    </Box>
   );
 };
+
+export default ProjectCard;

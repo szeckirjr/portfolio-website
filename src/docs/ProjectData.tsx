@@ -1,5 +1,4 @@
 /* eslint-disable max-lines */
-import Icon from '@chakra-ui/icon';
 import { DiCss3, DiCode, DiReact, DiHtml5 } from 'react-icons/di';
 import {
   SiTypescript,
@@ -28,119 +27,119 @@ import {} from 'react-icons/io';
 
 export const ToolTags = {
   React: {
-    icon: <Icon as={DiReact} />,
+    icon: DiReact,
     color: '#05a0c7'
   },
   'React Native': {
-    icon: <Icon as={DiReact} />,
+    icon: DiReact,
     color: '#05a0c7'
   },
   CSS: {
-    icon: <Icon as={DiCss3} />,
+    icon: DiCss3,
     color: '#2965f1'
   },
   C: {
-    icon: <Icon as={DiCode} />,
+    icon: DiCode,
     color: '#2b358d'
   },
   TypeScript: {
-    icon: <Icon as={SiTypescript} />,
+    icon: SiTypescript,
     color: '#007acc'
   },
   RobotC: {
-    icon: <Icon as={FaRobot} />,
+    icon: FaRobot,
     color: '#3c48a5'
   },
   HTML: {
-    icon: <Icon as={DiHtml5} />,
+    icon: DiHtml5,
     color: '#f06529'
   },
   Redux: {
-    icon: <Icon as={SiRedux} />,
+    icon: SiRedux,
     color: '#764abc'
   },
   'File input': {
-    icon: <Icon as={FaFileImport} />,
+    icon: FaFileImport,
     color: '#43AA8B'
   },
   Firebase: {
-    icon: <Icon as={SiFirebase} />,
+    icon: SiFirebase,
     color: '#FFA611'
   },
   Design: {
-    icon: <Icon as={FaPalette} />,
+    icon: FaPalette,
     color: '#F94144'
   },
   MongoDB: {
-    icon: <Icon as={SiMongodb} />,
+    icon: SiMongodb,
     color: '#4DB33D'
   },
   'Chakra UI': {
-    icon: <Icon as={SiChakraui} />,
+    icon: SiChakraui,
     color: '#5ebcb3'
   },
   'Spotify API': {
-    icon: <Icon as={SiSpotify} />,
+    icon: SiSpotify,
     color: '#1DB954'
   },
   'Express.js': {
-    icon: <Icon as={SiExpress} />,
+    icon: SiExpress,
     color: '#cdb70e'
   },
   Sensors: {
-    icon: <Icon as={RiSensorFill} />,
+    icon: RiSensorFill,
     color: '#90BE6D'
   },
   Python: {
-    icon: <Icon as={SiPython} />,
+    icon: SiPython,
     color: '#306998'
   },
   Scraper: {
-    icon: <Icon as={CgWebsite} />,
+    icon: CgWebsite,
     color: '#577590'
   },
   'Node.js': {
-    icon: <Icon as={SiNodedotjs} />,
+    icon: SiNodedotjs,
     color: '#3c873a'
   },
   'Electrical board': {
-    icon: <Icon as={GiElectricalResistance} />,
+    icon: GiElectricalResistance,
     color: '#577590'
   },
   valgrind: {
-    icon: <Icon as={MdMemory} />,
+    icon: MdMemory,
     color: '#577590'
   },
   JavaScript: {
-    icon: <Icon as={SiJavascript} />,
+    icon: SiJavascript,
     color: '#cab112'
   },
   Git: {
-    icon: <Icon as={SiGithub} />,
+    icon: SiGithub,
     color: '#F1502F'
   },
   'GitHub Actions': {
-    icon: <Icon as={SiGithubactions} />,
+    icon: SiGithubactions,
     color: '#2088FF'
   },
   GraphQL: {
-    icon: <Icon as={SiGraphql} />,
+    icon: SiGraphql,
     color: '#e535ab'
   },
   'GitHub Pages': {
-    icon: <Icon as={MdWeb} />,
+    icon: MdWeb,
     color: '#D8B863'
   },
   Django: {
-    icon: <Icon as={SiDjango} />,
+    icon: SiDjango,
     color: '#092E20'
   },
   Prisma: {
-    icon: <Icon as={SiPrisma} />,
+    icon: SiPrisma,
     color: '#2D3748'
   },
   PostgreSQL: {
-    icon: <Icon as={SiPostgresql} />,
+    icon: SiPostgresql,
     color: '#336791'
   }
 };
@@ -157,6 +156,7 @@ export type Project = {
   image?: string;
   scribble?: string;
   scribbleFilter?: string;
+  date: string;
 };
 
 export const projectData: Project[] = [
@@ -167,7 +167,8 @@ export const projectData: Project[] = [
     description: [],
     tags: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express.js', 'Node.js'],
     image: '/projects/careplan_builder.png',
-    scribble: '/scribbles/67.svg'
+    scribble: '/scribbles/67.svg',
+    date: 'Fall 2020'
   },
   {
     title: 'DMIA Portfolio',
@@ -178,7 +179,8 @@ export const projectData: Project[] = [
     image: '/projects/dmia_portfolio.png',
     scribble: '/scribbles/2.svg',
     github_url: 'https://github.com/PHACDataHub/datahub_portfolio',
-    url: 'https://phacdatahub.github.io/datahub_portfolio/'
+    url: 'https://phacdatahub.github.io/datahub_portfolio/',
+    date: 'Summer 2021 - Present'
   },
   {
     title: 'Health of Canadians Automation',
@@ -194,15 +196,17 @@ export const projectData: Project[] = [
       'Git',
       'GitHub Actions'
     ],
-    image: '',
-    scribble: ''
+    image: '/projects/cpho.png',
+    scribble: '',
+    date: 'Summer 2022 - Present',
+    github_url: 'https://github.com/PHACDataHub/cpho-phase2'
   },
   {
     title: 'CourseUp',
     short_description:
       'CourseUp is a web application that allows students to find, schedule, and register for courses at UVic',
     description: [
-      'CourseUp is a web application that allows users to search for courses and build timetbales for easier term scheduling and registration.',
+      'CourseUp is a web application that allows users to search for courses and build timetables for easier term scheduling and registration.',
       'It is built using React, TypeScript, and the Chakra UI library, as well as Firebase for the backend.',
       'It was built by students at VikeLabs, a programming club at UVic, which I joined at the end of 2021.',
       'I was able to implement to CourseUp features such as timetable sharing, which allows users to share their timetable with others.'
@@ -218,7 +222,8 @@ export const projectData: Project[] = [
       'JavaScript'
     ],
     image: '/projects/courseup.png',
-    scribble: '/scribbles/25.svg'
+    scribble: '/scribbles/25.svg',
+    date: 'Summer 2021 - Present'
   },
   {
     title: 'UVic Scheduler API',
@@ -228,7 +233,8 @@ export const projectData: Project[] = [
     tags: ['TypeScript', 'GraphQL', 'Prisma', 'PostgreSQL', 'Node.js'],
     github_url: 'https://github.com/SENG499-Company-4/Backend',
     image: '/projects/uvic_scheduler.png',
-    scribble: '/scribbles/39.svg'
+    scribble: '/scribbles/39.svg',
+    date: 'Summer 2022'
   },
   {
     title: 'Keyword-Out-Of-Context (KWOC)',
@@ -244,7 +250,8 @@ export const projectData: Project[] = [
     scribble: '/scribbles/18.svg',
     scribbleFilter:
       'invert(65%) sepia(86%) saturate(6762%) hue-rotate(338deg) brightness(81%) contrast(110%)',
-    image: '/projects/kwoc_c.png'
+    image: '/projects/kwoc_c.png',
+    date: 'Fall 2020'
   },
   {
     title: 'Portfolio Website',
@@ -261,7 +268,8 @@ export const projectData: Project[] = [
     image: '/projects/portfolio_site.png',
     scribble: '/scribbles/28.svg',
     scribbleFilter:
-      'invert(87%) sepia(39%) saturate(5335%) hue-rotate(352deg) brightness(102%) contrast(109%)'
+      'invert(87%) sepia(39%) saturate(5335%) hue-rotate(352deg) brightness(102%) contrast(109%)',
+    date: 'Summer 2020 - Present'
   },
   {
     title: 'VEX Robot',
@@ -275,7 +283,8 @@ export const projectData: Project[] = [
     github_url: 'https://github.com/szeckirjr/VEXKitRobot',
     tags: ['C', 'RobotC', 'Design', 'Sensors', 'Electrical board'],
     image: 'projects/vex_robot.png',
-    scribble: '/scribbles/62.svg'
+    scribble: '/scribbles/62.svg',
+    date: 'Spring 2019'
   },
   {
     title: 'Critify',
@@ -291,6 +300,8 @@ export const projectData: Project[] = [
       'Scraper'
     ],
     image: '/projects/spotific.png',
-    scribble: '/scribbles/24.svg'
+    scribble: '/scribbles/24.svg',
+    date: 'Summer 2022 - Present',
+    github_url: 'https://github.com/szeckirjr/critify_web'
   }
 ];
