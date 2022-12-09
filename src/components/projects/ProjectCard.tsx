@@ -71,10 +71,10 @@ const ProjectCard = ({
         top: 0,
         width: '100%',
         zIndex: 3,
-        background: `radial-gradient(1000px circle at ${clientX}px ${clientY}px, rgba(255,255,255,0.075), transparent 40%)`
+        background: `radial-gradient(1000px circle at ${clientX}px ${clientY}px, rgba(255,255,255,0.1), transparent 40%)`
       }}
       _after={{
-        background: `radial-gradient(400px circle at ${clientX}px ${clientY}px, rgba(255,255,255,1), transparent 40%)`,
+        background: `radial-gradient(500px circle at ${clientX}px ${clientY}px, rgba(255,255,255,1), transparent 40%)`,
         borderRadius: 'inherit',
         content: `""`,
         height: '100%',
