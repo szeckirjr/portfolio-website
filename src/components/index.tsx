@@ -14,12 +14,12 @@ export const PortfolioWebsite = (): JSX.Element => {
     <Box id="home" overflowX="hidden">
       <Menubar />
       <Home colors={colors} setColors={setColors} />
-      <VStack mx="auto" spacing={0} borderRadius="md">
+      {/* <VStack mx="auto" spacing={0} borderRadius="md">
         <Projects />
         <Experience />
         <Contact colors={colors} setColors={setColors} />
       </VStack>
-      <ScrollToTopButton colors={colors} />
+      <ScrollToTopButton colors={colors} /> */}
     </Box>
   );
 };
