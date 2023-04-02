@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { RandomReveal } from 'react-random-reveal';
 import { Characters as CharactersRequired } from 'react-random-reveal/lib/types';
 import { getRandomInt } from '../../docs/FuncLib';
+import './gradient.css';
 
 export default function Home({
   colors,
@@ -60,7 +61,9 @@ export default function Home({
                   .getElementById(`memoji-${imgSrc}`)
                   ?.style.setProperty('scale', '1')
               }
-              bgGradient={`linear(to-b, ${colors[0]}, ${colors[1]})`}
+              background="linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)"
+              backgroundSize="400% 400%"
+              animation="gradient 10s ease infinite"
             >
               <Image
                 id={`memoji-${imgSrc}`}
