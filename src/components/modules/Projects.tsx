@@ -6,19 +6,18 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/a11y';
-import NewProjectCard from '../projects/ProjectCard';
+import ProjectCard from '../projects/ProjectCard';
 
 export default function Projects(): JSX.Element {
   const [idxOpen, setIdxOpen] = useState(-1);
 
   const listOfProjects = projectData.map((project, idx) => (
-    <NewProjectCard
+    <ProjectCard
       project={project}
       key={idx}
       index={idx}
       indexOpen={idxOpen}
       setIndexOpen={setIdxOpen}
-      last={projectData.length - 1}
     />
   ));
 
@@ -30,18 +29,16 @@ export default function Projects(): JSX.Element {
       <Heading color="white" size="md">
         Click to learn more
       </Heading>
-      {/* <VStack w={['95%', '90%', '85%', '80%']} px={2}> */}
       <Flex
         wrap="wrap"
-        // gap={4}
+        gap={4}
         w={['95%', '90%', '85%', '80%']}
         justify="center"
-        flexDir="column"
-        align="center"
+        flexDir="row"
+        align="stretch"
       >
         {listOfProjects}
       </Flex>
-      {/* </VStack> */}
     </VStack>
   );
 }

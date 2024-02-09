@@ -18,11 +18,41 @@ export type Experience = {
 
 export const coopExperienceData: Experience[] = [
   {
+    title: 'Full Stack Developer',
+    subtitle: 'Assembly Digital - SJC',
+    range: 'May 2022 - Present',
+    description: [
+      'For my fifth co-op, I am working at Assembly Digital - SJC. I am working completely remotely as Assembly is a fully remote company. There, I am working with a team of developers to build and maintain web applications for clients and our own portfolio.',
+      'My main focus is on Statera, one of their key products. I am working with React and TypeScript, and I am also learning about AWS and working here and there with Python and Go scripts.'
+    ],
+    color: '#4A09FF',
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+      >
+        <g fill="none" fill-rule="evenodd">
+          <path
+            d="M100 51c0 27.614-22.384 50-50 50S0 78.614 0 51 22.384 1 50 1s50 22.386 50 50"
+            fill="#4A09FF"
+          ></path>
+          <path fill="#FF1651" d="m65 19.333-15 .013L57.835 33.5z"></path>
+          <path
+            fill="#FFF"
+            d="M82.5 76.833 50.421 19.347v-.014l-.003.008-.006-.008v.014L18.333 76.833h18.103l13.982-27.415 13.98 27.415z"
+          ></path>
+        </g>
+      </svg>
+    )
+  },
+  {
     title: 'Junior Data Analyst',
     subtitle: 'Public Health Agency of Canada (PHAC)',
-    range: 'May 2021 - Present',
+    range: 'May 2021 - April 2022',
     description: [
-      'For my second co-op, I am working for the Public Health Agency of Canada (PHAC). I am working completely remotely due to the on-going pandemic. There, I worked with data engineering and data analysis of COVID-19 related data.',
+      'For my second, third, and fourth co-ops, I am working for the Public Health Agency of Canada (PHAC). I am working completely remotely due to the on-going pandemic. There, I worked with data engineering and data analysis of COVID-19 related data.',
       'Worked with data models and diagramming, SQL, web development, pipelines, data cleaning, and Docker.'
     ],
     color: '#b53d35',
