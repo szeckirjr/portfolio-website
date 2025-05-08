@@ -136,6 +136,8 @@ const ProjectCard = ({
           <Spacer />
           <ButtonGroup
             isAttached
+            flex="flex"
+            flexWrap="wrap"
             gap={1}
             alignSelf={open ? 'start' : 'end'}
             zIndex={4}
@@ -161,8 +163,8 @@ const ProjectCard = ({
             <Image
               src={project.image}
               alt={project.title}
-              w="80%"
-              maxH="50vh"
+              w="100%"
+              maxW="500px"
               objectFit="cover"
             />
             <Spacer />

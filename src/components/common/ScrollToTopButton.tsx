@@ -43,6 +43,7 @@ export default function ScrollToTopButton({
       size="lg"
       isRound
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      zIndex={5}
     />
   );
 }

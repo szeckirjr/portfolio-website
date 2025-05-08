@@ -2,14 +2,14 @@ import { Box, Heading, VStack, Text } from '@chakra-ui/react';
 import { VerticalTimeline } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import {
-  coopExperienceData,
+  devExperienceData,
   otherExperienceData
 } from '../../docs/ExperienceData';
 import WorkTimelineElement from '../experience/WorkTimelineElement';
 import React from 'react';
 
 export default function Experience(): JSX.Element {
-  const timelineCoopExperience = coopExperienceData.map((p, idx) => (
+  const timelineDevExperience = devExperienceData.map((p, idx) => (
     <WorkTimelineElement key={idx} {...p} />
   ));
   const timelineOtherExperience = otherExperienceData.map((p, idx) => (
@@ -30,17 +30,17 @@ export default function Experience(): JSX.Element {
       <Heading color="white" size="2xl">
         Experience
       </Heading>
-      <Text color="white" fontSize="1.25em">
+      {/* <Text color="white" fontSize="1.25em">
         Click on any element to learn more about my role
-      </Text>
+      </Text> */}
       <Heading color="gray.50" id="coop-experience">
-        Co-Op Experience
+        Development
       </Heading>
       <Box w="100%">
-        <VerticalTimeline>{timelineCoopExperience}</VerticalTimeline>
+        <VerticalTimeline>{timelineDevExperience}</VerticalTimeline>
       </Box>
       <Heading color="gray.50" id="other-experience">
-        Other Experience
+        Other
       </Heading>
       <Box w="100%">
         <VerticalTimeline>{timelineOtherExperience}</VerticalTimeline>

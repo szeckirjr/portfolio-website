@@ -43,30 +43,21 @@ export default function Home({
       <Center
         id="home"
         bg="#303030"
-        p="20px"
         h="100vh"
         style={{ scrollSnapAlign: 'start' }}
       >
-        <HStack>
-          <VStack spacing={8}>
+        <HStack w="full">
+          <VStack spacing={8} w="full">
             <Box
-              onMouseEnter={() =>
-                document
-                  .getElementById(`memoji-${imgSrc}`)
-                  ?.style.setProperty('scale', '1.3')
-              }
-              onMouseLeave={() =>
-                document
-                  .getElementById(`memoji-${imgSrc}`)
-                  ?.style.setProperty('scale', '1')
-              }
               bgGradient={`linear(to-b, ${colors[0]}, ${colors[1]})`}
+              w="full"
+              justifyItems="center"
             >
               <Image
                 id={`memoji-${imgSrc}`}
                 cursor="pointer"
                 boxSize="230px"
-                minW="100vw"
+                // minW="100vw"
                 objectFit={'contain'}
                 onClick={handleClick}
                 src={imgSrc}
@@ -89,7 +80,7 @@ export default function Home({
             </Heading>
             <Heading color={colors[1]} px={3}>
               <RandomReveal
-                characters="Software Engineering student @ UVic"
+                characters="Software Engineer & Developer"
                 isPlaying
                 duration={2.3}
                 revealDuration={0.9}

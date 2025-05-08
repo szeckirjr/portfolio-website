@@ -27,10 +27,13 @@ export default function WorkTimelineElement({
       contentStyle={{ background: color, color: '#fff' }}
       contentArrowStyle={{ borderRight: '7px solid  ' + color }}
       date={range}
-      iconStyle={{ background: color, color: '#fff' }}
+      iconStyle={{
+        background: color,
+        color: '#fff'
+      }}
       icon={icon}
-      onTimelineElementClick={onOpen}
-      style={{ cursor: 'pointer' }}
+      // onTimelineElementClick={onOpen}
+      // style={{ cursor: 'pointer' }}
     >
       <HStack>
         <Box flexGrow={10}>
@@ -50,7 +53,7 @@ export default function WorkTimelineElement({
             {subtitle}
           </Text>
         </Box>
-        <IconButton
+        {/* <IconButton
           isRound
           bgColor={color}
           filter="contrast(130%)"
@@ -58,13 +61,13 @@ export default function WorkTimelineElement({
           onClick={onOpen}
           icon={<InfoOutlineIcon />}
           shadow="lg"
-        />
+        /> */}
       </HStack>
-      <ExperienceModal
+      {/* <ExperienceModal
         isOpen={isOpen}
         onClose={onClose}
         experience={{ title, subtitle, description, color, range, icon }}
-      />
+      /> */}
     </VerticalTimelineElement>
   );
 }
