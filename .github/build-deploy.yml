@@ -1,0 +1,30 @@
+name: Build React App & Deploy Portfolio to GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build React App
+    runs-on: ubuntu-latest
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: package-lock.json
+    - name: Install dependencies
+      run: npm install
+    - name: Build React app
+      run: npm run build
+    - name: Add domain to CNAME
+      run: echo 'wardo.dev' > build/CNAME
+    - name: Deploy to GitHub Pages
+      run: npx gh-pages -d build
