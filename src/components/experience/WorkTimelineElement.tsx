@@ -1,26 +1,26 @@
-import { InfoOutlineIcon } from '@chakra-ui/icons';
+// import { InfoOutlineIcon } from '@chakra-ui/icons';
 import {
   Box,
   Heading,
   HStack,
-  IconButton,
-  Text,
-  useDisclosure
+  // IconButton,
+  Text
+  // useDisclosure
 } from '@chakra-ui/react';
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { Experience } from '../../docs/ExperienceData';
-import ExperienceModal from './ExperienceModal';
+// import ExperienceModal from './ExperienceModal';
 import React from 'react';
 
 export default function WorkTimelineElement({
   title,
   subtitle,
-  description,
+  // description,
   color,
   range,
   icon
 }: Experience): JSX.Element {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
