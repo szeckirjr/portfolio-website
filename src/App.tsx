@@ -1,6 +1,7 @@
-import { ChakraProvider, theme } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { PortfolioWebsite } from './components';
 import smoothscroll from 'smoothscroll-polyfill';
+import { theme } from './theme';
 
 const App = (): JSX.Element => {
   smoothscroll.polyfill();
