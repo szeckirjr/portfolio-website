@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-deploy:
@@ -21,7 +21,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Build React app
         run: npm run build
       - name: Add domain to CNAME
