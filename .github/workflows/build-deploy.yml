@@ -26,9 +26,8 @@ jobs:
         run: npm run build
       - name: Add domain to CNAME
         run: echo 'wardo.dev' > build/CNAME
-      - name: Add GitHub info
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "me@wardo.dev"
       - name: Deploy to GitHub Pages
-        run: npx gh-pages -d build
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
