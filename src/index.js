@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 
 import ReactGA from "react-ga4";
 
-ReactGA.initialize(process.env.GTAG_ID || "G-XXXXXXX");
+ReactGA.initialize("G-PYKH5VQ5J3");
 
 // React 18 create React app and start it
 ReactDOM.createRoot(document.getElementById('root')).render(
