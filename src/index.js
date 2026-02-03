@@ -5,6 +5,10 @@ import App from './App.tsx';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
+import ReactGA from "react-ga4";
+
+ReactGA.initialize(process.env.GTAG_ID || "G-XXXXXXX");
+
 // React 18 create React app and start it
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
