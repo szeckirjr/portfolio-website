@@ -58,6 +58,7 @@ export default function Home({
                 cursor="pointer"
                 boxSize="230px"
                 // minW="100vw"
+                margin="auto"
                 objectFit={'contain'}
                 onClick={handleClick}
                 src={imgSrc}
